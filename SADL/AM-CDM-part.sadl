@@ -3,6 +3,7 @@ uri "http://kdl.ge.com/AM-CDM-part" alias AM-CDM-part version "$Revision:$ Last 
 import "http://kdl.ge.com/AM-CDM-system".
 
 Part (note "Instances of part designs in the as-built state.") is a class,
+	described by partID (note "Unique identifier for the Part.") with a single value of type string,
 	described by partName (note "Human readable name which designates this part.") with a single value of type string,
 	described by partProcessHistory with a single value of type ProcessHistory,
 	described by partDesignSpecification (note "Design information for the finished part.") with a single value of type DesignSpecification,
@@ -10,6 +11,7 @@ Part (note "Instances of part designs in the as-built state.") is a class,
 	described by partProject (note "The project that this part is associated with") with values of type Project.
 
 DesignSpecification (note "Specification for a part.") is a class,
+	described by designSpecID (note "Unique identifier for the DesignSpecification.") with a single value of type string,
 	described by designSpecName (note 'Human readable name which designates this design specification.') with a single value of type string,
 	described by designSpecAuthor (note "Author of design specification.") with a single value of type Person,
 	described by designSpecCriticality (note "Criticality designation of part or parts to be developed in this project.") with a single value of type string,
