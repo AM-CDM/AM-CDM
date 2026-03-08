@@ -12,7 +12,7 @@ Each AM-CDM SADL file contains a collection of classes, which are comprised of z
 
 A simple example of an extract of SADL is shown in Figure 1 below, with a simplified Part class with only four attributes. One attribute is the Part's partProcessHistory, of type ProcessHistory, which includes zero to many PlannedProcessSteps. A ManufacturingProcessStep is another class that is shown, which is a subclass of PlannedProcessStep. The Build class is included, which is a further subclass of ManufacturingProcessStep. Within the ManufacturingProcessStep class there are three attributes, including the mfgProcessMachine class, which specifies the System upon which the manufacturing step is performed. A highly simplified version of the System class is also shown including only four attributes, three of which are of type string, and a fourth specifies the system components of which the System is comprised. the AMSystem class is also defined, which is a subclass of System. The relationship between four of these classes is visually displayed in Figure 1, to make the class relationships more apparent.
 
-<img width="48%" alt="SADL example text" src="https://github.com/user-attachments/assets/21947534-53a7-48fe-8d01-4ce4ad640e25" /><img width="48%" alt="SADL example figure" src="https://github.com/user-attachments/assets/cdfb775e-b37a-4a6d-a0e7-d500a02bc825" />
+<img width="52%" align="middle" alt="SADL example text" src="https://github.com/user-attachments/assets/21947534-53a7-48fe-8d01-4ce4ad640e25" /><img width="45%" align="middle" alt="SADL example figure" src="https://github.com/user-attachments/assets/94787e2d-bb7d-4d30-8bb8-b60faf14e091" />
 Figure 1 - Several simplified AM-CDM classes including Part, ProcessHistory, and System in SADL, and a visual representation of the relationships between four of the classes.
 
 ## Data Dictionaries vs. Data Models vs. Data Exchange Formats
@@ -43,7 +43,7 @@ When referencing the SADL files, Classes are sets of things (or data object type
 ### Required Classes/Properties
 The example illustrated in Figure 3 and Figure 4 shows a simple application of the data model that links a printed test specimen back to the material powder stock where it originated.  Even though the Specimen and PowderStock objects might be the only data of interest, they are not neighbors in the data model and it is still necessary to capture the ProcessHistory, ManufacturingProcessStep, and MaterialStockInput to preserve the pedigree of data linking these two objects on either side.  This is one example of required Classes.  In their absence, there is no relationship between the powder and specimen objects.  
 
-<img width="1049" height="531" alt="image" src="https://github.com/user-attachments/assets/40e75891-5ddd-4074-9e18-40814970acc9" />
+<img width="1123" height="477" alt="Example use case linking PowderStock to Specimen" src="https://github.com/user-attachments/assets/c4b97349-cab6-439d-8367-01402951ba94" />
 
 Figure 3 - CDM use case linking a PowderStock class object to a Specimen class object.  Red boxes indicate parent classes and light blue boxes indicate required name/ID properties.
 
