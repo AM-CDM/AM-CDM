@@ -13,6 +13,7 @@ Each AM-CDM SADL file contains a collection of classes, which are comprised of z
 A simple example of an extract of SADL is shown in Figure 1 below, with a simplified Part class with only four attributes. One attribute is the Part's partProcessHistory, of type ProcessHistory, which includes zero to many PlannedProcessSteps. A ManufacturingProcessStep is another class that is shown, which is a subclass of PlannedProcessStep. The Build class is included, which is a further subclass of ManufacturingProcessStep. Within the ManufacturingProcessStep class there are three attributes, including the mfgProcessMachine class, which specifies the System upon which the manufacturing step is performed. A highly simplified version of the System class is also shown including only four attributes, three of which are of type string, and a fourth specifies the system components of which the System is comprised. the AMSystem class is also defined, which is a subclass of System. The relationship between four of these classes is visually displayed in Figure 1, to make the class relationships more apparent.
 
 <img width="52%" align="middle" alt="SADL example text" src="https://github.com/user-attachments/assets/21947534-53a7-48fe-8d01-4ce4ad640e25" /><img width="45%" align="middle" alt="SADL example figure" src="https://github.com/user-attachments/assets/94787e2d-bb7d-4d30-8bb8-b60faf14e091" />
+
 Figure 1 - Several simplified AM-CDM classes including Part, ProcessHistory, and System in SADL, and a visual representation of the relationships between four of the classes.
 
 ## Data Dictionaries vs. Data Models vs. Data Exchange Formats
@@ -31,10 +32,9 @@ Figure 2 - Three example entries from the AM-CDD, modeled in two classes of the 
 ## AM-CDM Scope
 The AM-CDM is currently AM process-agnostic, meaning it does not include AM domain-specific information, such as data related specifically to Metallic Laser Powder Bed Fusion or Metallic Wire-Arc Directed Energy Deposition. Future efforts can focus on extensions to the AM-CDM for these specific domains, relying on the domain Subject Matter Experts (SMEs) to define and organize the data of that domain. For instance, data models representing specific destructive testing types (e.g. tensile testing) or specific thermal treatments (e.g. stress relief) could be constructed that build on the AM-CDM. Specific, non-AM concepts (e.g. organization, personnel, system) have been included in the AM-CDM in effort to create a holistic picture of the AM data pedigree.
 
-## AM-CDM Structure
-*insert some graphics of the AM-CDM to help visualize the organization and structure*
-*focus on most important classes*
+<img width="98%" alt="Major classes from AM-CDM" src="https://github.com/user-attachments/assets/dc3fd39f-f8dc-45b5-a043-1940d1722300" />
 
+Figure 3 - Most classes from the Additive Manufacturing Common Data Model, with different modules in different colors.  Edges indicate relationships between classes.
 
 ## How to use the AM-CDM
 The Common Data Model can be adopted into a variety of situations where the Additive Manufacturing data is being collected in accordance with FAIR principles.  Some example users include powder manufacturers, AM system OEMs, and coupon testing houses.  While there are certainly use cases that will depend on and utilize a full implementation of the data model, each of the examples above may only be interested in a subset of data.  The benefits of each group adopting the CDM are twofold.  First, they ensure their data internally follows best practices.  Second, they can communicate that data to each other or a larger project.
