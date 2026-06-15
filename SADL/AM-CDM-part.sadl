@@ -6,7 +6,7 @@ Part (note "Instances of part designs in the as-built state.") is a type of Mate
 	described by partName (note "Human readable name which designates this part.") with a single value of type string,
 	described by partProcessHistory with a single value of type ProcessHistory,
 	described by partDesignSpecification (note "Design information for the finished part.") with a single value of type DesignSpecification,
-	described by partProcessSpecificPartDesign (note "A design file which specifies the part at the completion of a manufacturing process step. This is not the specification for completed part.") with values of type PartSpecificProcessParameters,
+	described by partProcessSpecificPartDesign (note "A design file which specifies the part at the completion of a manufacturing process step. This is not the specification for completed part.") with values of type Document,
 	described by partProject (note "The project that this part is associated with") with values of type Project.
 
 DesignSpecification (note "Specification for a part.") is a class,
