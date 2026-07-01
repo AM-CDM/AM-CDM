@@ -4,11 +4,14 @@ import "http://kdl.ge.com/AM-CDM-base".
 
 ProcessHistory (note "(Elucidation) A history is a process that is the sum of the totality of processes taking place in the spatiotemporal region occupied by the material part of a material entity") is a class,
 	described by processHistoryID (note "UID for specific processHistory.") with a single value of type string,
-	described by historyProcessStep (note "Sequence of events performed.") with values of type PlannedProcessStep.
+	described by orderedProcessStep (note "Sequence of events performed.") with values of type IndexedProcessStep.
+
+IndexedProcessStep is a class,
+	defined by index (note "The time ordered enumeration of processes which this object participated in. ") of type int,
+	defined by processStep (note "A process which the referencing object participated in.")with single value of type ProcessStep.
 
 PlannedProcessStep (note "a process that is planned") is a class,
 	described by processName (note 'Human readable name which designates this process step.') with a single value of type string,
-	described by processSequenceNumber (note "Sequence identifier of processing steps in chronological order.") with a single value of type int,
 	described by processPersonnel with values of type Person,
 	described by processOrganization (note "The organization which performs the process step.") with a single value of type Organization,
 	described by processAddress (note "Address where process was performed.") with a single value of type Address,
