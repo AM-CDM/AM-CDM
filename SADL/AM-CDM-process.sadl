@@ -3,6 +3,7 @@ uri "http://kdl.ge.com/AM-CDM-process" alias AM-CDM-process version "$Revision:$
 import "http://kdl.ge.com/AM-CDM-base".
 
 ProcessHistory (note "(Elucidation) A history is a process that is the sum of the totality of processes taking place in the spatiotemporal region occupied by the material part of a material entity") is a class,
+	described by processHistoryID (note "UID for specific processHistory.") with a single value of type string,
 	described by historyProcessStep (note "Sequence of events performed.") with values of type PlannedProcessStep.
 
 PlannedProcessStep (note "a process that is planned") is a class,
