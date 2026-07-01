@@ -7,7 +7,7 @@ Build (note "A Build is an action to make one or more objects in a single action
 mfgProcessMachine of Build only has values of type AMSystem.
 mfgProcessMaterialInputs of Build only has values of type AMMaterialInput.
 mfgProcessMaterialOutputs of Build only has values of type AMMaterialOutput.
-processSpecification of Build only has values of type AMProcessSpecification.
+processStepSpecification of Build only has values of type AMProcessSpecification.
 processData of Build only has values of type AMProcessData.
 
 AMMaterialInput is a type of MaterialInputs,

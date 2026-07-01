@@ -3,7 +3,6 @@ uri "http://kdl.ge.com/AM-CDM-manufacturingProcess" alias AM-CDM-manufacturingPr
 import "http://kdl.ge.com/AM-CDM-system".
 
 ManufacturingProcess (note "Planned process in which input material is transformed or modified.") is a type of PlannedProcessStep,
-	described by processSpecification with a single value of type ManufacturingSpecification,
 	described by mfgProcessMachine (note "The machine used to transform the input material.") with a single value of type System,
 	described by mfgProcessControlSoftware (note "Software used to control the process.") with values of type Software,
 	described by mfgProcessConsumables (note "Consumables used during this process step.") with values of type Consumables,
@@ -17,6 +16,7 @@ ManufacturingSpecification (note "A specification for a manufacturing process") 
  	described by mfgSpecEnvironment with a single value of type Environment.
 
 GlobalProcessParameters is a class.
+processStepSpecification of ManufacturingProcess only has values of type ManufacturingSpecification.
 
 PartSpecificProcessParameters is a class,
 	described by partSpecOrientation (note "Specified orientation for the specific part.") with a single value of type Orientation,
