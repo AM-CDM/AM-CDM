@@ -42,4 +42,3 @@ MaterialStockSampling (note "Separating or extracting a part or component from a
 
 mfgProcessMaterialInputs of PartSpecimenExtraction only has values of type MaterialStockInput.
 mfgProcessMaterialOutputs of PartSpecimenExtraction only has values of type MaterialStockOutput.
-

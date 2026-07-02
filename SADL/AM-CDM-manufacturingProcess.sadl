@@ -4,7 +4,7 @@ import "http://kdl.ge.com/AM-CDM-system".
 import "http://kdl.ge.com/AM-CDM-part".
 
 ManufacturingProcessStep (note "Planned process in which input material is transformed or modified.") is a type of PlannedProcessStep,
-	described by processSpecification with a single value of type ManufacturingSpecification,
+	described by processSpecification with a single value of type ManufacturingStepSpecification,
 	described by mfgProcessMachine (note "The machine used to transform the input material.") with a single value of type System,
 	described by mfgProcessControlSoftware (note "Software used to control the process.") with values of type Software,
 	described by mfgProcessConsumables (note "Consumables used during this process step.") with values of type Consumables,
@@ -18,7 +18,7 @@ ManufacturingStepSpecification (note "A specification for a manufacturing proces
 	described by mfgSpecEnvironment with a single value of type Environment.
 
 GlobalProcessParameters is a class.
-processStepSpecification of ManufacturingProcess only has values of type ManufacturingStepSpecification.
+processStepSpecification of ManufacturingProcessStep only has values of type ManufacturingStepSpecification.
 
 Consumables (note "Materials which are used during the execution of a process, but do not, in a substantial way, become part of material output. Example: Process Gas") is a class.
 

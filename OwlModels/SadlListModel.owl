@@ -3,30 +3,29 @@
     xmlns:sadllistmodel="http://sadl.org/sadllistmodel#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-  xml:base="http://sadl.org/sadllistmodel">
-  <owl:Ontology rdf:about="">
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://sadl.org/sadllistmodel">
     <rdfs:comment xml:lang="en">Typed List model for SADL.</rdfs:comment>
   </owl:Ontology>
-  <owl:Class rdf:ID="List"/>
-  <owl:ObjectProperty rdf:ID="rest">
-    <rdfs:range rdf:resource="#List"/>
-    <rdfs:domain rdf:resource="#List"/>
+  <owl:Class rdf:about="http://sadl.org/sadllistmodel#List"/>
+  <owl:ObjectProperty rdf:about="http://sadl.org/sadllistmodel#rest">
+    <rdfs:range rdf:resource="http://sadl.org/sadllistmodel#List"/>
+    <rdfs:domain rdf:resource="http://sadl.org/sadllistmodel#List"/>
   </owl:ObjectProperty>
-  <rdf:Property rdf:ID="first">
-    <rdfs:domain rdf:resource="#List"/>
+  <rdf:Property rdf:about="http://sadl.org/sadllistmodel#first">
+    <rdfs:domain rdf:resource="http://sadl.org/sadllistmodel#List"/>
   </rdf:Property>
-  <owl:DatatypeProperty rdf:ID="maxLengthRestriction">
+  <owl:DatatypeProperty rdf:about="http://sadl.org/sadllistmodel#maxLengthRestriction">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <rdfs:domain rdf:resource="#List"/>
+    <rdfs:domain rdf:resource="http://sadl.org/sadllistmodel#List"/>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="lengthRestriction">
+  <owl:DatatypeProperty rdf:about="http://sadl.org/sadllistmodel#lengthRestriction">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <rdfs:domain rdf:resource="#List"/>
+    <rdfs:domain rdf:resource="http://sadl.org/sadllistmodel#List"/>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="minLengthRestriction">
+  <owl:DatatypeProperty rdf:about="http://sadl.org/sadllistmodel#minLengthRestriction">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <rdfs:domain rdf:resource="#List"/>
+    <rdfs:domain rdf:resource="http://sadl.org/sadllistmodel#List"/>
   </owl:DatatypeProperty>
-  <owl:AnnotationProperty rdf:ID="listtype"/>
+  <owl:AnnotationProperty rdf:about="http://sadl.org/sadllistmodel#listtype"/>
 </rdf:RDF>
