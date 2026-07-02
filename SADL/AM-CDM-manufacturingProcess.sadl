@@ -3,7 +3,6 @@ uri "http://kdl.ge.com/AM-CDM-manufacturingProcess" alias AM-CDM-manufacturingPr
 import "http://kdl.ge.com/AM-CDM-system".
 
 ManufacturingProcess (note "Planned process in which input material is transformed or modified.") is a type of PlannedProcessStep,
-	described by processSpecification with a single value of type ManufacturingSpecification,
 	described by mfgProcessMachine (note "The machine used to transform the input material.") with a single value of type System,
 	described by mfgProcessControlSoftware (note "Software used to control the process.") with values of type Software,
 	described by mfgProcessConsumables (note "Consumables used during this process step.") with values of type Consumables,
@@ -11,12 +10,13 @@ ManufacturingProcess (note "Planned process in which input material is transform
 	described by mfgProcessMaterialOutputs (note "New material stock of parts that are created in this process") with values of type MaterialOutputs,
 	described by mfgProcessSimulation (note "Reference to Simulation records associated with this processStep.") with values of type ProcessSimulation.
 
-ManufacturingSpecification (note "A specification for a manufacturing process") is a type of ProcessStepSpecification,
+ManufacturingStepSpecification (note "A specification for a manufacturing process") is a type of ProcessStepSpecification,
 	described by mfgSpecGlobalProcessParameters (note "Nominal system setting which apply to all material stock involved in the Manufacturing Process Step.") with values of type GlobalProcessParameters,
 	described by mfgSpecPartSpecificProcessParameters (note "Nominal system setting which uniquely apply to an individual part to be processed.") with values of type PartSpecificProcessParameters,
  	described by mfgSpecEnvironment with a single value of type Environment.
 
 GlobalProcessParameters is a class.
+processStepSpecification of ManufacturingProcess only has values of type ManufacturingStepSpecification.
 
 PartSpecificProcessParameters is a class,
 	described by partSpecOrientation (note "Specified orientation for the specific part.") with a single value of type Orientation,
@@ -28,7 +28,7 @@ Design (note "Detailed information for the design of a part - STL, AM CAD, rever
 	described by designOriginatingOrganization (note "Developer of the source CAD file. Links to Organization foreign key.") with values of type Organization,
 	described by designDerivedFromPartDesign (note "Part Design of original part this object is derived from (if applicable).") with a single value of type Design.
 
-Consumables (note "Materials which are used during the execution of a process, but do not, in a substantial way, become part of material output. Example: Process Gas") is a class.
+Consumables (note "Materials which are used during the execution of a process, but do not, in a substantial way, become part of material output. Example: Process Gas") is a type of MaterialStockType.
 
 MaterialInputs (note "Materials that are an input to the process and become a part of the material output in a substantial way. Examples: Powder Feedstock, billet, sub-components to be assembled.") is a class.
 

@@ -7,7 +7,7 @@ Build (note "A Build is an action to make one or more objects in a single action
 mfgProcessMachine of Build only has values of type AMSystem.
 mfgProcessMaterialInputs of Build only has values of type AMMaterialInput.
 mfgProcessMaterialOutputs of Build only has values of type AMMaterialOutput.
-processSpecification of Build only has values of type AMProcessSpecification.
+processStepSpecification of Build only has values of type AMProcessStepSpecification.
 processData of Build only has values of type AMProcessData.
 
 AMMaterialInput is a type of MaterialInputs,
@@ -36,14 +36,14 @@ BuildPlate (note "Material input which provides a surface upon which the buildin
 	described by buildPlateCertificationDate (note "The purchase/certification date of the build platform.") with a single value of type dateTime,
 	described by buildPlateCertification (note "Link to the build plate certificate.") with a single value of type Document.
 
-AMProcessSpecification is a type of ManufacturingSpecification,
+AMProcessStepSpecification is a type of ManufacturingStepSpecification,
 	described by amSpecBuildPlan (note "Document that describes the build specific design intent and requirements. This may include plate layout, witness coupons, object quantity, position/orientation.") with values of type Document,
 	described by amSpecBuildLayout (note "Document that describe the arrangement or positioning of multiple parts or objects on the build platform ") with a single value of type Document,
 	described by amSpecJobFile (note "Digital and propriatary file defined by a machine vendor that contains all the necessary instructions for a 3D printer to fabricate an object") with a single value of type Document,
 	described by amSpecBuildCommandData (note "Dataset that captures the specific set of instructions or commands that guide the 3D printer during the printing process, for example, xy2-100 commands and G-code etc") with a single value of type DatasetMetadata.
 
-mfgSpecGlobalProcessParameters of AMProcessSpecification only has values of type BuildParameters.
-mfgSpecPartSpecificProcessParameters of AMProcessSpecification only has values of type AMPartParameters.
+mfgSpecGlobalProcessParameters of AMProcessStepSpecification only has values of type BuildParameters.
+mfgSpecPartSpecificProcessParameters of AMProcessStepSpecification only has values of type AMPartParameters.
 
 BuildParameters is a type of GlobalProcessParameters,
 	described by buildParamPlatformPreheatTemperature (note "Temperature setting the build platform is heated to prior to print.") with a single value of type Quantity,
