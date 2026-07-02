@@ -18,6 +18,7 @@ ManufacturingStepSpecification (note "A specification for a manufacturing proces
 	described by mfgSpecEnvironment with a single value of type Environment.
 
 GlobalProcessParameters is a class.
+processStepSpecification of ManufacturingProcess only has values of type ManufacturingStepSpecification.
 
 Consumables (note "Materials which are used during the execution of a process, but do not, in a substantial way, become part of material output. Example: Process Gas") is a class.
 

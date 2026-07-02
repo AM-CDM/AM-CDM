@@ -44,8 +44,8 @@ AMProcessStepSpecification is a type of ManufacturingStepSpecification,
 	described by amSpecJobFile (note "Digital and proprietary file defined by a machine vendor that contains all the necessary instructions for a 3D printer to fabricate an object") with a single value of type Document,
 	described by amSpecBuildCommandData (note "Dataset that captures the specific set of instructions or commands that guide the 3D printer during the printing process, for example, xy2-100 commands and G-code etc") with a single value of type DatasetMetadata.
 
-mfgSpecGlobalProcessParameters of AMProcessSpecification only has values of type BuildParameters.
-mfgSpecPartSpecificProcessParameters of AMProcessSpecification only has values of type AMPartParameters.
+mfgSpecGlobalProcessParameters of AMProcessStepSpecification only has values of type BuildParameters.
+mfgSpecPartSpecificProcessParameters of AMProcessStepSpecification only has values of type AMPartParameters.
 
 BuildParameters is a type of GlobalProcessParameters,
 	described by buildParamPlatformPreheatTemperature (note "Temperature setting the build platform is heated to prior to print.") with a single value of type Quantity,
