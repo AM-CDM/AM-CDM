@@ -47,9 +47,9 @@ The example illustrated in Figure 3 and Figure 4 shows a simple application of t
 
 Figure 3 - CDM use case linking a PowderStock class object to a Specimen class object.  Red boxes indicate parent classes and light blue boxes indicate required name/ID properties.
 
-<img width="867" height="487" alt="image" src="https://github.com/user-attachments/assets/4339184e-ad99-48cb-8ae5-d15d650fa733" />
+<img width="969" height="652" alt="SADL file associated with use case in Figure 3" src="https://github.com/user-attachments/assets/73298423-d55b-4ed3-be2a-55f7b9657a10" />
 
-Figure 4 - THe same use case in Figure 3 represented as text in the SADL files.
+Figure 4 - The same use case in Figure 3 represented as text in the SADL files.
 
 In these cases, not only is the intermediate Class required but also a Reference Property to link them and establish the relationship.  Reference Properties belong to one Class but represent an object from another class.  For example, specimenProcessHistoy is a property of the Specimen Class but has values of type ProcessHistory, effectively creating the pedigree between these two data objects.
 
