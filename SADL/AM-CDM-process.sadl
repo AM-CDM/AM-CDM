@@ -18,7 +18,7 @@ PlannedProcessStep (note "A process that is planned.") is a class,
 	described by processStartTime (note "Time when process step starts.") with a single value of type dateTime,
 	described by processEndTime (note "Time when process step ends.") with a single value of type dateTime,
 	described by processStepSpecification (note "Prescribed process specification for this process occurrence.") with a single value of type ProcessStepSpecification,
-	described by processData (note "Process monitoring data, in-situ monitoring data, real-time monitoring etc, real-time control information.") with a single value of type ProcessStepData,
+	described by processStepData (note "Process monitoring data, in-situ monitoring data, real-time monitoring etc, real-time control information.") with a single value of type ProcessStepData,
 	described by childProcessSteps (note "Sub processes that are fully contained within the PlannedProcessStep." ) with values of type IndexedPlannedProcessStep.
 
 IndexedPlannedProcessStep is a class,
