@@ -3,16 +3,16 @@ uri "http://kdl.ge.com/AM-CDM-system" alias AM-CDM-system version "$Revision:$ L
 import "http://kdl.ge.com/AM-CDM-process".
 
 System (note "A manufacturing system that may be an aggregate of subsystems.") is a class,
-	described by systemID (note "Unique identifier of equipment.") with a single value of type string,
-	described by systemSerialNumber (note "The serial number of the equipment defined by the vendor.") with a single value of type string,
-	described by systemName (note "The name of the equipment.") with a single value of type string,
-	described by systemPurchaseDate (note "The purchase/certification date of the installed equipment.") with a single value of type dateTime,
-	described by systemOwner (note "The owner/organization of the equipment.") with a single value of type Organization,
-	described by systemLocation (note "The location where the equipment is installed.") with a single value of type Address,
-	described by systemSpecification with a single value of type SystemSpecification,
-	described by systemProcessHistory with a single value of type ProcessHistory,
-	described by systemComponents with values of type System,
-	described by systemMachineCapability (note "Vendor provided AM machine specification.") with a single value of type MachineCapability.
+	described by systemID (note "Unique identifier of the system.") with a single value of type string,
+	described by systemSerialNumber (note "The serial number of the system defined by the vendor.") with a single value of type string,
+	described by systemName (note "The name of the system.") with a single value of type string,
+	described by systemPurchaseDate (note "The purchase date of the system.") with a single value of type dateTime,
+	described by systemOwner (note "The owning organization of the system.") with a single value of type Organization,
+	described by systemLocation (note "The location where the system is installed.") with a single value of type Address,
+	described by systemSpecification (note "Information about the system that is specified by the system manufacturer.") with a single value of type SystemSpecification,
+	described by systemProcessHistory (note "An ordered series of processes that have occurred to the system.") with a single value of type ProcessHistory,
+	described by systemComponents (note "Other systems that have been assembled and integrated to consitiute the system.") with values of type System,
+	described by systemCapability (note "Capabilities and limitations of the system.") with a single value of type systemCapability.
 
 SystemSpecification is a class,
 	described by systemModel (note "Model name of a machine defined by the machine manufacturer.") with a single value of type string,
@@ -25,9 +25,10 @@ SystemSpecification is a class,
 AMSystem is a type of System.
 
 systemSpecification of AMSystem only has values of type AMSystemSpecification.
+systemCapability of AMSystem only has values of type AMSystemCapability.
  
 AMSystemSpecification is a type of SystemSpecification,
-	described by amSystemMachineHazmatRequirements (note "A document of a link to AM Machine HAZMAT Requirements.") with a single value of type string.
+	described by amSystemHazmatRequirements (note "A document of a link to AM system hazardous material requirements.") with a single value of type string.
 
 Sensor is a type of System,
 	described by sensorSystemSpecification with a single value of type SensorSpecification.
@@ -141,13 +142,15 @@ BuildVolume (note "Total usable volume available in the machine for building par
 	described by buildVolumeTotalBuildVolume (note "The total usable volume available in the AM System.") with a single value of type Quantity,
 	described by buildVolumeMachineLastCleanoutDate (note "The date when the build volume was last cleaned.") with a single value of type dateTime.
 
-MachineCapability (note "Vendor-provided AM machine specification.") is a class,
-	described by machineCapabilityProcessableRawMaterial (note "A processable raw material list of an AM machine.") with values of type MaterialType,
-	described by machineCapabilityMaximumBuildRate with a single value of type Quantity,
-	described by machineCapabilityMinimumLayerThickness with a single value of type Quantity,
-	described by machineCapabilityMaximumLayerThickness with a single value of type Quantity,
-	described by machineCapabilityMinimumOxygenLevel with a single value of type Quantity,
-	described by machineCapabilityMinimumMoistureLevel with a single value of type Quantity.
+SystemCapability (note "Capabilities or limitations of a system, which may be provided by the system manufacturer or vendor.") is a class
+
+AMSystemCapability (note "Capabilities or limitations of an AM system, which may be provided by the system manufacturer or vendor.") is a class,
+	described by systemCapabilityProcessableRawMaterial (note "A processable raw material list of an AM system.") with values of type MaterialType,
+	described by systemCapabilityMaximumBuildRate with a single value of type Quantity,
+	described by systemCapabilityMinimumLayerThickness with a single value of type Quantity,
+	described by systemCapabilityMaximumLayerThickness with a single value of type Quantity,
+	described by systemCapabilityMinimumOxygenLevel with a single value of type Quantity,
+	described by systemCapabilityMinimumMoistureLevel with a single value of type Quantity.
 
 SystemQualificationEvent is a type of PlannedProcessStep,
 	described by processEventData (note "Process monitoring data, in-situ monitoring data, real-time monitoring etc, real-time control information.") with a single value of type SystemQualificationEventData.
