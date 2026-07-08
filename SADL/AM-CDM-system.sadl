@@ -4,7 +4,7 @@ import "http://kdl.ge.com/AM-CDM-process".
 
 System (note "A manufacturing system that may be an aggregate of subsystems.") is a class,
 	described by systemID (note "Unique identifier of the system.") with a single value of type string,
-	described by systemSerialNumber (note "The serial number of the system defined by the vendor.") with a single value of type string,
+	described by systemSerialNumber (note "The serial number of the system defined by the manufacturer.") with a single value of type string,
 	described by systemName (note "The name of the system.") with a single value of type string,
 	described by systemPurchaseDate (note "The purchase date of the system.") with a single value of type dateTime,
 	described by systemOwner (note "The owning organization of the system.") with a single value of type Organization,
@@ -14,7 +14,7 @@ System (note "A manufacturing system that may be an aggregate of subsystems.") i
 	described by systemComponents (note "Other systems that have been assembled and integrated to consitiute the system.") with values of type System,
 	described by systemCapability (note "Capabilities and limitations of the system.") with a single value of type systemCapability.
 
-SystemSpecification is a class,
+SystemSpecification (note "Information about the system that is specified by the system manufacturer.") is a class,
 	described by systemModel (note "Model name of a machine defined by the machine manufacturer.") with a single value of type string,
 	described by systemManufacturer (note "The manufacturer of the equipment.") with a single value of type Organization,
 	described by systemSpecElectricVoltage (note "Voltage for an AM Machine's electrical connection.") with a single value of type Quantity,
@@ -22,57 +22,57 @@ SystemSpecification is a class,
 	described by systemSpecPowerFrequency (note "Power frequency for the electrical connection of an AM Machine.") with a single value of type Quantity,
 	described by systemSoftware (note "Computer programs required for operation of this system.") with values of type Software.
 
-AMSystem is a type of System.
+AMSystem (note "A system that is capable of additively manufacturing parts.") is a type of System.
 
 systemSpecification of AMSystem only has values of type AMSystemSpecification.
 systemCapability of AMSystem only has values of type AMSystemCapability.
  
-AMSystemSpecification is a type of SystemSpecification,
+AMSystemSpecification (note "Specifications that are unique to an AM system.") is a type of SystemSpecification,
 	described by amSystemHazmatRequirements (note "A document of a link to AM system hazardous material requirements.") with a single value of type string.
 
-Sensor is a type of System,
-	described by sensorSystemSpecification with a single value of type SensorSpecification.
+Sensor (note "A system that observes an object or a process and collects data about the object or process.") is a type of System,
+	described by sensorSpecification (note "A specification that is unique to a sensor.") with a single value of type SensorSpecification.
 
-SensorSpecification is a type of SystemSpecification,
-	described by samplingRateMin with a single value of type Quantity,
-	described by samplingRateMax with a single value of type Quantity.
+SensorSpecification (note "A specification that is unique to a sensor.") is a type of SystemSpecification,
+	described by samplingRateMin (note "The minimum rate at which the sensor is able to sample data at.") with a single value of type Quantity,
+	described by samplingRateMax (note "The maximum rate at which the sensor is able to sample data at.") with a single value of type Quantity.
 
-BuildChamber (note "Enclosed location within the additive manufacturing system where the parts are fabricated.") is a type of System,
-	described by buildChamberEnvironmentalControl (note "Environment control of the build chamber on its temperature, pressure, humidity and oxygen level, for optimal quality of AM material transformation.") with a single value of type BuildEnvironmentalControl,
-	described by buildChamberVolume (note "Total usable volume available in the machine for building parts.") with a single value of type BuildVolume.
+BuildChamber (note "An enclosed location within an AM system where the parts are fabricated.") is a type of System,
+	described by buildChamberEnvironmentalControl (note "Environment control of the build chamber, indluding its temperature, pressure, humidity and oxygen level, for optimal quality of AM material transformation.") with a single value of type BuildEnvironmentalControl,
+	described by buildChamberVolume (note "Total usable volume available in the AM system for building parts.") with a single value of type BuildVolume.
 
-LaserSystem is a type of System,
-	described by laserSystemSpecification with a single value of type LaserSystemSpecification,
-	described by laserSystemLaserBeamProfile with a single value of type Document.
+Laser (note "A system that is capable of producing a laser beam.") is a type of System,
+	described by laserSpecification (note "A specification that is unique to a laser.") with a single value of type laserSpecification,
+	described by laserLaserBeamProfile (note "The measured cross-sectional intensity profile of a laser beam.") with a single value of type Document.
 
-LaserSystemSpecification is a type of SystemSpecification,
-	described by laserSystemNumberOfLasers with a single value of type int,
-	described by laserSystemModeOfLaserOperation with a single value of type string,
-	described by laserSystemMaxLaserPower with a single value of type Quantity,
-	described by laserSystemMinLaserPower with a single value of type Quantity,
-	described by laserSystemRatedWaveLength with a single value of type Quantity,
-	described by laserSystemBeamShape with a single value of type string,
-	described by laserSystemMaxBeamSpotSize with a single value of type Quantity,
-	described by laserSystemMinBeamSpotSize with a single value of type Quantity,
-	described by laserSystemFocusCorrectionType with a single value of type string.
+laserSpecification (note "A specification that is unique to a laser.") is a type of SystemSpecification,
+	described by laserNumberOfLasers (note "The number of laser beams the laser is intentionally designed to produce by the laser manufacturer.") with a single value of type int,
+	described by laserModeOfLaserOperation (note "The mode that the laser operates at. For example, Continuous Wave, Pulsed Wave, etc.") with a single value of type string,
+	described by laserMaxLaserPower (note "The maximum power output that the laser is able to emmit, as specified by the laser manufacturer.") with a single value of type Quantity,
+	described by laserMinLaserPower (note "The minimum power output that the laser is able to emmit, as specified by the laser manufacturer.") with a single value of type Quantity,
+	described by laserRatedWaveLength (note "The wavelength that the laser operates at as specificed by the laser manufacturer.") with a single value of type Quantity,
+	described by laserBeamShape (note "The shape of the laser beam that was designed by the laser manufacturer. This does not account for any additional optics that may modify the laser beam shape.") with a single value of type string,
+	described by laserMaxBeamSpotSize (note "The maximum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
+	described by laserMinBeamSpotSize (note "The minimum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
+	described by laserFocusCorrectionType (note "The optical laser focusing correction type.") with a single value of type string.
 
-Recoater is a type of System.
+Recoater (note "A system which spreads or recoats powder accross a surface.") is a type of System.
 
 systemSpecification of Recoater only has values of type RecoaterSpecification.
 
-RecoaterSpecification is a type of SystemSpecification,
+RecoaterSpecification (note "A specification that is unique to a recoater.") is a type of SystemSpecification,
 	described by samplingRateMin with a single value of type Quantity,
 	described by samplingRateMax with a single value of type Quantity,
-	described by recoaterMaximumSpeed with a single value of type Quantity,
-	described by recoaterMaxUsesAllowed with a single value of type integer,
-	described by recoatingBladeMaterialType with a single value of type MaterialType,
-	described by recoatingBladeMaterialSpecification with a single value of type Document.
+	described by recoaterMaximumSpeed (note "The maximum speed at which the recoater can transverse at.") with a single value of type Quantity,
+	described by recoaterMaxUsesAllowed (note "The maximum number of builds that a recoater is allowed to participate in.") with a single value of type integer,
+	described by recoatingSurfaceMaterialType (note "The material that the recoating surface is made of.") with a single value of type MaterialType,
+	described by recoatingSurfaceMaterialSpecification (note "Specifications that are unique to the recoating surface material.") with a single value of type Document.
 
-GalvoScanner is a type of System.
+GalvoScanner (note "A system that is used to manipulate a laser beam.") is a type of System.
 
 systemSpecification of GalvoScanner only has values of type GalvoScannerSpecification.
 
-GalvoScannerSpecification is a type of SystemSpecification,
+GalvoScannerSpecification (note "A specification that is unique to a galvo scanner.")is a type of SystemSpecification,
 	described by galvoScannerMaxScanAngleX with a single value of type Quantity,
 	described by galvoScannerMaxScanAngleY with a single value of type Quantity,
 	described by galvoScannerRepeatability with a single value of type Quantity,
@@ -84,7 +84,7 @@ Camera is a type of Sensor.
 
 systemSpecification of Camera only has values of type CameraSpecification.
 
-CameraSpecification is a type of SensorSpecification,
+CameraSpecification (note "A specification that is unique to a camera.") is a type of SensorSpecification,
 	described by cameraImageWidth (note "Camera image width in pixel.") with a single value of type Quantity,
 	described by cameraBitDepth (note "Bit depth of pixel values.") with a single value of type Quantity,
 	described by cameraImageHeight (note "Camera image height in pixel.") with a single value of type Quantity,
@@ -99,15 +99,15 @@ Lens is a type of Sensor.
 
 systemSpecification of Lens only has values of type LensSpecification.
 
-LensSpecification is a type of SensorSpecification,
+LensSpecification (note "A specification that is unique to a lens.") is a type of SensorSpecification,
 	described by lensAperture with a single value of type Quantity,
 	described by lensFilter with a single value of type string.
 
-PhotoDiode is a type of Sensor.
+Photodiode is a type of Sensor.
 
-systemSpecification of PhotoDiode only has values of type PhotoDiodeSpecification.
+systemSpecification of Photodiode only has values of type PhotodiodeSpecification.
 
-PhotoDiodeSpecification is a type of SensorSpecification,
+PhotodiodeSpecification (note "A specification that is unique to a photodiode.") is a type of SensorSpecification,
 	described by photodiodeOpticalFilterBandwidth with a single value of type Quantity,
 	described by photodiodeBitDepth with a single value of type Quantity.
 
@@ -115,7 +115,7 @@ Pyrometer is a type of Sensor.
 
 systemSpecification of Pyrometer only has values of type PyrometerSpecification.
 
-PyrometerSpecification is a type of SensorSpecification,
+PyrometerSpecification (note "A specification that is unique to a pyrometer.") is a type of SensorSpecification,
 	described by pyrometerOpticalFilterBandwidth1 with a single value of type Quantity,
 	described by pyrometerOpticalFilterBandwidth2 with a single value of type Quantity,
 	described by pyrometerBitDepth with a single value of type Quantity.
