@@ -8,7 +8,7 @@ mfgProcessMachine of Build only has values of type AMSystem.
 mfgProcessMaterialInputs of Build only has values of type AMMaterialInput.
 mfgProcessMaterialOutputs of Build only has values of type AMMaterialOutput.
 processStepSpecification of Build only has values of type AMProcessStepSpecification.
-processData of Build only has values of type AMProcessStepData.
+processStepData of Build only has values of type AMProcessStepData.
 
 AMMaterialInput (note "Materials that are an input to the AM process and become a part of the material output, including feedstock and build plate.") is a type of MaterialInputs,
 	described by amMatInputFeedstockMaterial (note "Bulk raw material supplied to the additive manufacturing building process.") with a single value of type MaterialStock,
@@ -59,7 +59,7 @@ BuildParameters (note "Process parameters and settings which apply to all parts 
 AMPartParameters is a type of PartSpecificProcessParameters.
 
 AMProcessStepData (note "Data generated in the build Process, including in-situ monitoring data, build interruptions, build cool down duration and images captured") is a type of ProcessStepData,
-	described by amDataInSituData (note "Advanced AM in-process monitoring BIG data, is differentiated from processData.") with values of type AMInSituData,
+	described by amDataInSituData (note "Advanced AM in-process monitoring BIG data, is differentiated from processStepData.") with values of type AMInSituData,
  	described by amDataBuildInterruptions (note "logs of build interruptions") with values of type BuildInterruption,
 	described by amDataBuildCoolDownDuration (note "Time from build completion to cooling to 100 degrees C.") with a single value of type Quantity,
 	described by amDataBuildImages (note "Images collected during the build process, usually capturing the build surface.") with values of type Document.
@@ -87,7 +87,7 @@ mfgProcessMachine of AMPartExtraction only has values of type PartExtractionSyst
 mfgProcessMaterialInputs of AMPartExtraction only has values of type BuildProductInput.
 mfgProcessMaterialOutputs of AMPartExtraction only has values of type AMPartExtractionMaterialOutput.
 processStepSpecification of AMPartExtraction only has values of type PartExtractionProcessStepSpecification.
-processData of AMPartExtraction only has values of type PartExtractionProcessStepData.
+processStepData of AMPartExtraction only has values of type PartExtractionProcessStepData.
 
 PartExtractionProcessStepSpecification (note "A specification for part seperation from build plate") is a type of ManufacturingStepSpecification.
 PartExtractionProcessStepData (note "Data recorded by the personnel involved in the PartExtractionProcess step") is a type of ProcessStepData.
