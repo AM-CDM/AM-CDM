@@ -4,6 +4,7 @@ import "http://kdl.ge.com/AM-CDM-build".
 
 TestInspectionCharacterization (note "Any test, inspection, or characterization performed on any part or material specimen from any stage of the additive manufacturing fabrication process (excluding in-process monitoring).") is a type of PlannedProcessStep,
 	described by ticResult with a single value of type TestResult.
+	described by ticSpecimen (note "The specimen that the Test Inspection or Characterization happened to. This is a convenience relationship and is redundant to the relationship established through a Process History.") with a single value of type SpecimenID.
 
 NonDestructiveExamination (note "A process step in which a part in inspected non-destructively") is a type of TestInspectionCharacterization.
 
