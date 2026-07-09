@@ -11,28 +11,28 @@ SheetStock (note "Material stock in the form of sheet.") is a type of MaterialSt
 FilamentStock (note "Material stock in the form of filament.") is a type of MaterialStock.
 
 MaterialStock (note "Information about a material covering feedstock, reusables, and consumables.") is a class,
-	described by materialstockID (note "Unique identifier for specific material instance. For example, a unique lot number.") with a single value of type string,
+	described by materialStockID (note "Unique identifier for specific material instance. For example, a unique lot number.") with a single value of type string,
 	described by materialStockName (note "A name of material for operational purposes, and using UNS number is recommended.") with a single value of type string,
 	described by materialType (note "Generic material this specific instance is an instantiation of, such as Ni-based superalloy or stainless steel.") with a single value of type MaterialType,
 	described by actualChemistry (note "Chemistry characterization for the specific material instance, which may be different from the nominal chemistry.") with a single value of type Chemistry,
-	described by materialstockSpecification (note "Material data sheet provided by a material supplier or manufacturer.") with a single value of type Document,
+	described by materialStockSpecification (note "Material data sheet provided by a material supplier or manufacturer.") with a single value of type Document,
 	described by materialPurchaseHistory (note "Information about purchasing material, including vendor, manufacturer, etc.") with a single value of type MaterialPurchaseHistory,
 	described by materialStorage (note "Details about how to store the material") with values of type MaterialStorage,
-	described by materialstockCertificate (note "Link to a material stock certificate.") with a single value of type Document,
-	described by materialstockCertificationDate (note "Date that the material is certified.") with a single value of type dateTime,
+	described by materialStockCertificate (note "Link to a material stock certificate.") with a single value of type Document,
+	described by materialStockCertificationDate (note "Date that the material is certified.") with a single value of type dateTime,
 	described by materialProperties (note "Property of the material, which can be measured or calculated.") with values of type MaterialProperty,
 	described by packagingRequirements (note "Packaging standard operating procedure and environmental tolerances required by a material product.") with a single value of type Document.
 
 MaterialPurchaseHistory (note "Information about purchasing material, including vendor, manufacturer, etc.") is a class,
-	described by materialstockVendor (note "Name of the material stock vendor. Not specified if material stock is a blend from multiple lots.") with a single value of type Organization,
-	described by materialstockManufacturer (note "Name of the material stock manufacturer. Not specified if material stock is a blend from multiple lots.") with a single value of type Organization,
+	described by materialStockVendor (note "Name of the material stock vendor. Not specified if material stock is a blend from multiple lots.") with a single value of type Organization,
+	described by materialStockManufacturer (note "Name of the material stock manufacturer. Not specified if material stock is a blend from multiple lots.") with a single value of type Organization,
 	described by vendorManufacturingLot (note "Unique manufacturing lot number assigned by the manufacturer to the material stock.") with a single value of type string,
 	described by purchaseOrderNumber (note "Reference to the internal purchase order.") with a single value of type string.
 
 MaterialStorage (note "Details about how to store the material.") is a class,
-	described by materialstockOwner (note "Owner/organization of a material stock.") with a single value of type Organization,
-	described by materialstockLocation (note "Current physical location of material stock.") with a single value of type Address,
-	described by materialstockQuantity (note "Quantity of material stock.") with a single value of type Quantity,
+	described by materialStockOwner (note "Owner/organization of a material stock.") with a single value of type Organization,
+	described by materialStockLocation (note "Current physical location of material stock.") with a single value of type Address,
+	described by materialStockQuantity (note "Quantity of material stock.") with a single value of type Quantity,
 	described by storageEnvironment (note "Material stock storage environment details - temperature, humidity, light, etc.") with a single value of type Document,
 	described by storageRequirements (note "Environmental tolerances, handling standard operating procedure required by a material product.") with a single value of type Document.
 
