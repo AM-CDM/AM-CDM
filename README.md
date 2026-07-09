@@ -38,7 +38,7 @@ Figure 3 - Major classes in the Additive Manufacturing-Common Data Model, with d
 
 The AM-CDM is comprised of eight distinct SADL files. Figure 4 shows the dependency between these eight files, beginning with AM-CDM-base containing foundational classes such as Person, Organization, and Quantity, and ending with AM-CDM-testInspectionCharacterization containing classes such as PartSpecimen, NonDestructiveExamination, and DestructiveTest.
 
-<img width="1191" height="181" alt="AM-CDM file dependency" src="https://github.com/user-attachments/assets/f42b514e-7003-495c-a87a-8140ccf00c05" />
+<img width="98%" alt="AM-CDM file dependency" src="https://github.com/user-attachments/assets/04acc34b-8a7e-4008-a24b-a06754bcf980" />
 
 Figure 4 - Dependency between AM-CDM SADL files.
 
