@@ -83,20 +83,6 @@
   <owl:Class rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#Consumables">
     <rdfs:comment xml:lang="en">Materials which are used during the execution of a process, but do not, in a substantial way, become part of material output. Example: Process Gas</rdfs:comment>
   </owl:Class>
-  <owl:Class rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingSpecification">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onClass rdf:resource="http://kdl.ge.com/AM-CDM-base#Environment"/>
-        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
-        >1</owl:qualifiedCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#mfgSpecEnvironment"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en">A specification for a manufacturing process</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://kdl.ge.com/AM-CDM-process#ProcessStepSpecification"/>
-  </owl:Class>
   <owl:Class rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#PartMaterialOutput">
     <rdfs:subClassOf rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#MaterialOutputs"/>
   </owl:Class>
@@ -286,7 +272,37 @@
       <owl:Class rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingProcessStep"/>
     </rdfs:subClassOf>
   </owl:Class>
+  <owl:Class rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="http://kdl.ge.com/AM-CDM-base#Environment"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#mfgSpecEnvironment"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="http://kdl.ge.com/AM-CDM-base#Environment"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#mfgSpecEnvironment"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">A specification for a manufacturing process</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kdl.ge.com/AM-CDM-process#ProcessStepSpecification"/>
+  </owl:Class>
   <owl:Class rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingProcessStep">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification"/>
+        <owl:onProperty rdf:resource="http://kdl.ge.com/AM-CDM-process#processStepSpecification"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onClass rdf:resource="http://kdl.ge.com/AM-CDM-system#System"/>
@@ -299,7 +315,7 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onClass rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingSpecification"/>
+        <owl:onClass rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification"/>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
         >1</owl:qualifiedCardinality>
         <owl:onProperty>
@@ -382,13 +398,13 @@
     <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ProcessSimulation"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#mfgSpecGlobalProcessParameters">
-    <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingSpecification"/>
+    <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification"/>
     <rdfs:comment xml:lang="en">Nominal system setting which apply to all material stock involved in the Manufacturing Process Step.</rdfs:comment>
     <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#GlobalProcessParameters"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#processSpecification">
     <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingProcessStep"/>
-    <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingSpecification"/>
+    <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#simulationSoftware">
     <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ProcessSimulation"/>
@@ -396,7 +412,7 @@
     <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-system#Software"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#mfgSpecEnvironment">
-    <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingSpecification"/>
+    <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification"/>
     <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-base#Environment"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#powderStockInput">
@@ -414,7 +430,7 @@
     <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-base#Document"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://kdl.ge.com/AM-CDM-manufacturingProcess#mfgSpecPartSpecificProcessParameters">
-    <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingSpecification"/>
+    <rdfs:domain rdf:resource="http://kdl.ge.com/AM-CDM-manufacturingProcess#ManufacturingStepSpecification"/>
     <rdfs:comment xml:lang="en">Nominal system setting which uniquely apply to an individual part to be processed.</rdfs:comment>
     <rdfs:range rdf:resource="http://kdl.ge.com/AM-CDM-part#PartSpecificProcessParameters"/>
   </owl:ObjectProperty>

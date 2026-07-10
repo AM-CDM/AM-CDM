@@ -4,7 +4,7 @@ import "http://kdl.ge.com/AM-CDM-system".
 import "http://kdl.ge.com/AM-CDM-part".
 
 ManufacturingProcessStep (note "Planned process in which input material is transformed or modified.") is a type of PlannedProcessStep,
-	described by processSpecification with a single value of type ManufacturingSpecification,
+	described by processSpecification with a single value of type ManufacturingStepSpecification,
 	described by mfgProcessMachine (note "The machine used to transform the input material.") with a single value of type System,
 	described by mfgProcessControlSoftware (note "Software used to control the process.") with values of type Software,
 	described by mfgProcessConsumables (note "Consumables used during this process step.") with values of type Consumables,
@@ -12,12 +12,13 @@ ManufacturingProcessStep (note "Planned process in which input material is trans
 	described by mfgProcessMaterialOutputs (note "New material stock of parts that are created in this process") with values of type MaterialOutputs,
 	described by mfgProcessSimulation (note "Reference to Simulation records associated with this processStep.") with values of type ProcessSimulation.
 
-ManufacturingSpecification (note "A specification for a manufacturing process") is a type of ProcessStepSpecification,
+ManufacturingStepSpecification (note "A specification for a manufacturing process") is a type of ProcessStepSpecification,
 	described by mfgSpecGlobalProcessParameters (note "Nominal system setting which apply to all material stock involved in the Manufacturing Process Step.") with values of type GlobalProcessParameters,
 	described by mfgSpecPartSpecificProcessParameters (note "Nominal system setting which uniquely apply to an individual part to be processed.") with values of type PartSpecificProcessParameters,
 	described by mfgSpecEnvironment with a single value of type Environment.
 
 GlobalProcessParameters is a class.
+processStepSpecification of ManufacturingProcessStep only has values of type ManufacturingStepSpecification.
 
 Consumables (note "Materials which are used during the execution of a process, but do not, in a substantial way, become part of material output. Example: Process Gas") is a class.
 

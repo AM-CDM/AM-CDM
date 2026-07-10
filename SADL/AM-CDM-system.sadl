@@ -38,11 +38,10 @@ SensorSpecification is a type of SystemSpecification,
 
 BuildChamber (note "Enclosed location within the additive manufacturing system where the parts are fabricated.") is a type of System,
 	described by buildChamberEnvironmentalControl (note "Environment control of the build chamber on its temperature, pressure, humidity and oxygen level, for optimal quality of AM material transformation.") with a single value of type BuildEnvironmentalControl,
-	described by buildChamberVolume (note "total usable volume available in the machine for building parts.") with a single value of type BuildVolume.
+	described by buildChamberVolume (note "Total usable volume available in the machine for building parts.") with a single value of type BuildVolume.
 
 LaserSystem is a type of System,
 	described by laserSystemSpecification with a single value of type LaserSystemSpecification,
-	// BeamProfile should be the output of a maintenance event
 	described by laserSystemLaserBeamProfile with a single value of type Document.
 
 LaserSystemSpecification is a type of SystemSpecification,
@@ -77,7 +76,6 @@ GalvoScannerSpecification is a type of SystemSpecification,
 	described by galvoScannerMaxScanAngleY with a single value of type Quantity,
 	described by galvoScannerRepeatability with a single value of type Quantity,
 	described by galvoScannerMaxScanSpeed with a single value of type Quantity,
-	// Key question for data registration: How do we track system coordinate frames
 	described by galvoScannerOrigin with a single value of type CartesianCoordinate,
 	described by galvoScannerType with a single value of type string.
 
@@ -89,7 +87,6 @@ CameraSpecification is a type of SensorSpecification,
 	described by cameraImageWidth (note "Camera image width in pixel.") with a single value of type Quantity,
 	described by cameraBitDepth (note "Bit depth of pixel values.") with a single value of type Quantity,
 	described by cameraImageHeight (note "Camera image height in pixel.") with a single value of type Quantity,
-	// What does cameraCenter mean?
 	described by cameraCenter (note "Width, Height center position of a camera in pixels.") with a single value of type CartesianCoordinate,
 	described by cameraOpticalFilterBandwidth (note "Bandwidth of a camera's filter bandwidth.") with a single value of type Quantity,
 	described by cameraDetectorPitchSize (note "Camera detection pitch size.") with a single value of type Quantity,
