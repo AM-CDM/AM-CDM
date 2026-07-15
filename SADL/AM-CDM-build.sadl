@@ -13,17 +13,17 @@ processStepData of Build only has values of type AMProcessStepData.
 AMMaterialInput (note "Materials that are an input to the AM process and become a part of the material output, including feedstock and build plate.") is a type of MaterialInputs,
 	described by amMatInputFeedstockMaterial (note "Bulk raw material supplied to the additive manufacturing building process.") with a single value of type MaterialStock,
 	described by amMatInputQuantityOfFeedstockMaterialUsed (note "Mass of material used in solidified parts.") with a single value of type Quantity,
-	described by amMatInputBuildPlate with a single value of type BuildPlate.
+	described by amMatInputBuildPlate (note "A BuildPlate as a critical materail input to an AM build.") with a single value of type BuildPlate.
 
 AMMaterialOutput(note "Materials that are an output of the AM process, including a BuildProduct and reclaimed feedstock.") is a type of MaterialOutputs,
 	described by amMatOutputReclaimedFeedstockMaterial (note "Feedstock reclaimed upon the completion of the AM process.") with a single value of type MaterialStock,
-	described by amMatOutputBuildProduct with a single value of type BuildProduct.
+	described by amMatOutputBuildProduct (note "BuildProduct, with a build plate and parts built on top of it, as the primary output from an AM build.")with a single value of type BuildProduct.
 
 BuildProduct (note "The build plate with parts connected to it. The build product is specified by the BuildLayout.") is a class,
-	described by buildProdName with a single value of type string,
-	described by buildProdProcessHistory with a single value of type ProcessHistory,
-	described by buildProdBuildPlate with a single value of type BuildPlate,
-	described by buildProdParts with values of type Part.
+	described by buildProdName (note "Human readable name which designates an AM build") with a single value of type string,
+	described by buildProdProcessHistory (note "A history is a process that is the sum of the totality of processes of a BuildProduct.") with a single value of type ProcessHistory,
+	described by buildProdBuildPlate (note "An BuildPlate which is the foundation of a BuildProduct where parts are built on") with a single value of type BuildPlate,
+	described by buildProdParts (note "Parts that are built on a BuildPlate, as the primary component of a BuildProduct") with values of type Part.
 
 BuildPlate (note "Material input which provides a surface upon which the building of the part/s, is started and supported throughout the build process.") is a type of Part,
 	described by buildPlateID (note "Identifier of a build platform.") with a single value of type string,
@@ -93,8 +93,8 @@ PartExtractionProcessStepSpecification (note "A specification for part seperatio
 PartExtractionProcessStepData (note "Data recorded by the personnel involved in the PartExtractionProcess step") is a type of ProcessStepData.
 
 AMPartExtractionMaterialOutput (note "The material output from an AM part extraction process, including parts and a build plate") is a type of MaterialOutputs,
-	described by amAMPartExtractionParts with values of type Part,
-	described by amAMPartExtractionBuildPlate with a single value of type BuildPlate.
+	described by amAMPartExtractionParts (note "The parts extracted from an BuildProduct") with values of type Part,
+	described by amAMPartExtractionBuildPlate (note "The BuildPlate extracted from an BuildProduct")  with a single value of type BuildPlate.
 
 PowderRecycling (note "The process of collecting and processing materials and turning them into new ones.") is a type of ManufacturingProcessStep.
 
