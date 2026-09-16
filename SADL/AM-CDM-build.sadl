@@ -20,13 +20,13 @@ AMMaterialOutput(note "Material that is an output of an AM process, including a 
 	described by amMatOutputBuildProduct (note "Build product that includes a build plate and parts built on top of it, as the primary output from an AM process.")with a single value of type BuildProduct.
 
 BuildProduct (note "Build plate with parts connected to it") is a class,
-	described by buildProdName (note "Human-readable name which designates a build product.") with a single value of type string,
+	described by buildProdName (note "Human-readable name of a build product.") with a single value of type string,
 	described by buildProdProcessHistory (note "History that is the sum of the totality of processes of the build product.") with a single value of type ProcessHistory,
 	described by buildProdBuildPlate (note "Build plate that is the foundation of a build product where parts are built on.") with a single value of type BuildPlate,
 	described by buildProdParts (note "Parts that are built on a build plate, as the primary components of a build product") with values of type Part.
 
 BuildPlate (note "Material input which provides a surface upon which the building of parts is started and supported throughout the build process.") is a type of Part,
-	described by buildPlateID (note "Identifier assigned to the build plate for a build") with a single value of type string,
+	described by buildPlateID (note "Unique identifier that designates a build plate.") with a single value of type string,
 	described by buildPlateMaterial (note "Material type of a build plate.") with a single value of type MaterialType,
 	described by buildPlateMaterialGrade (note "Standard grade to which build plate material conforms.") with a single value of type string,
 	described by buildPlateHeight (note "Height of a build plate.") with a single value of type Quantity,
