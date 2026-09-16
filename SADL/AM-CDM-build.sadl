@@ -47,10 +47,10 @@ AMProcessStepSpecification (note "Specification for an additive manufacturing pr
 mfgSpecGlobalProcessParameters of AMProcessStepSpecification only has values of type BuildParameters.
 mfgSpecPartSpecificProcessParameters of AMProcessStepSpecification only has values of type AMPartParameters.
 
-BuildParameters (note "Process parameters and settings which apply to all parts in a build Process.") is a type of GlobalProcessParameters,
+BuildParameters (note "Process parameters and settings which apply to all parts in a build Process, includng process settings for the build platform as defined in ISO/ASTM 52900:2021.") is a type of GlobalProcessParameters,
 	described by buildParamPlatformPreheatTemperature (note "Temperature setting the build platform is heated to prior to print.") with a single value of type Quantity,
 	described by buildParamPlatformLevelingMethod (note "Description of the method of platform leveling procedures and tools.") with a single value of type string,
-	described by buildParamPlatformZStartPosition (note "Z position of top of the build plate prior to starting a build.") with a single value of type Quantity,
+	described by buildParamPlatformZStartPosition (note "Z position of top of the build platform prior to starting a build.") with a single value of type Quantity,
 	described by buildParamPlatformPreheatStrategy (note "Objective for the the build platform preheating process.") with a single value of type string,
 	described by buildParamPlatformPreheatProfile (note "Heating profile setting for reaching the preheat temperature.") with a single value of type Document,
 	described by buildParamLayerThickness (note "Setting for the incremental distance between built layers.") with a single value of type Quantity,
