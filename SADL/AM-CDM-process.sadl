@@ -4,7 +4,7 @@ import "http://kdl.ge.com/AM-CDM-material".
 
 ProcessHistory (note "(Elucidation) A history is a process that is the sum of the totality of processes taking place in the spatiotemporal region occupied by the material part of a material entity [BFO].") is a class,
 	described by processHistoryID (note "Globally unique identifier assigned to a specific process history.") with a single value of type string,
-	described by orderedProcessStep (note "Process steps, taken in an ordered sequence, that make up the process history.") with values of type IndexedProcessStep.
+	described by orderedProcessStep (note "Process steps, performed in an ordered sequence, that make up the process history.") with values of type IndexedProcessStep.
 
 IndexedProcessStep (note "Process step paired with an index that fixes its position within an ordered sequence.") is a class,
 	described by indexStep (note "Time-ordered position of a process step within the sequence.") with a single value of type int,

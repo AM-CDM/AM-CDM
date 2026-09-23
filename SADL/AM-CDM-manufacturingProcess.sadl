@@ -9,7 +9,7 @@ ManufacturingProcessStep (note "Planned process in which input material is trans
 	described by mfgProcessControlSoftware (note "Software applications used to control the manufacturing process step.") with values of type Software,
 	described by mfgProcessConsumables (note "Consumables used during the manufacturing process step.") with values of type Consumables,
 	described by mfgProcessMaterialInputs (note "Materials provided as inputs to the manufacturing process step.") with values of type MaterialInputs,
-	described by mfgProcessMaterialOutputs (note "Materials produced as output by the manufacturing process step.") with values of type MaterialOutputs,
+	described by mfgProcessMaterialOutputs (note "Materials produced as outputs by the manufacturing process step.") with values of type MaterialOutputs,
 	described by mfgProcessSimulation (note "Simulation records associated with the process step.") with values of type ProcessSimulation.
 
 ManufacturingStepSpecification (note "Specification that prescribes how a manufacturing process step is performed.") is a type of ProcessStepSpecification,
