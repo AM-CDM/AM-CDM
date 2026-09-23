@@ -2,34 +2,34 @@ uri "http://kdl.ge.com/AM-CDM-part" alias AM-CDM-part version "$Revision:$ Last 
 
 import "http://kdl.ge.com/AM-CDM-system".
 
-Part (note "Instances of part designs in the as-built state.") is a class,
-	described by partID (note "Unique identifier for the part.") with a single value of type string,
-	described by partName (note "Human-readable name which designates the part.") with a single value of type string,
-	described by partProcessHistory (note "Process history associated with the part.") with a single value of type ProcessHistory,
-	described by partDesignSpecification (note "Design information for the finished part.") with a single value of type DesignSpecification,
-	described by partProcessSpecificPartDesign (note "A design file which specifies the part at the completion of a manufacturing process step. This is not the specification for the completed part.") with values of type Document,
-	described by partProject (note "The project to which the part is associated.") with values of type Project.
+Part (note "Physical component in the as-built state.") is a class,
+	described by partID (note "Globally unique identifier assigned to a specific part within the data model.") with a single value of type string,
+	described by partName (note "Human-readable name that designates the part.") with a single value of type string,
+	described by partProcessHistory (note "Record of manufacturing activities associated with the part.") with a single value of type ProcessHistory,
+	described by partDesignSpecification (note "Design specification that prescribes the finished part.") with a single value of type DesignSpecification,
+	described by partProcessSpecificPartDesign (note "Design files that specifies an intermediate state of a part after completion of a manufacturing process step.") with values of type DesignSpecification,
+	described by partProject (note "Project associated with the part.") with values of type Project.
 
-DesignSpecification (note "Specification for a part.") is a class,
-	described by designSpecID (note "Unique identifier for the design specification.") with a single value of type string,
-	described by designSpecName (note "Human readable name which designates the design specification.") with a single value of type string,
-	described by designSpecAuthor (note "Author of design specification.") with a single value of type Person,
-	described by designSpecCriticality (note "Criticality designation of part or parts to be developed in the project.") with a single value of type string,
-	described by designSpecRequirements (note "Document describing requirements or goals for components/specimens to be manufactured.") with a single value of type Document,
-	described by designSpecDesign (note "Design files which specify the component.") with values of type Design.
+DesignSpecification (note "Document that defines requirements for a part.") is a class,
+	described by designSpecID (note "Globally unique identifier assigned to a specific design specification within the data model.") with a single value of type string,
+	described by designSpecName (note "Human-readable name that designates the design specification.") with a single value of type string,
+	described by designSpecAuthor (note "Person who authors the design specification.") with a single value of type Person,
+	described by designSpecCriticality (note "Designation of the consequence associated with failure of the specified part.") with a single value of type string,
+	described by designSpecRequirements (note "Document that states requirements or objectives for a component or specimen to be manufactured.") with a single value of type Document,
+	described by designSpecDesign (note "Design file that specifies a component.") with values of type Design.
 
-PartSpecificProcessParameters (note "Process parameters specific to the part.") is a class,
-	described by partSpecOrientation (note "Specified orientation for the specific part.") with a single value of type Orientation,
-	described by partSpecDesign (note "Design file that prescribes the changes to the part that are specific to this process.") with a single value of type Design.
+PartSpecificProcessParameters (note "Set of process parameters that apply to a specific part.") is a class,
+	described by partSpecOrientation (note "Orientation specified for the part.") with a single value of type Orientation,
+	described by partSpecDesign (note "Design file that prescribes process-specific changes to the part.") with a single value of type Design.
 
-Design (note "Detailed information for the design of a part - STL, AM CAD, reverse engineered model. The part design, from which a physical object can be printed on an AM system.") is a type of Document,
-	described by designSoftware (note "Reference to CAD software name/version. Links to Software foreign key.") with a single value of type Software,
-	described by designRevNumber (note "Revision number of the part design.") with a single value of type string,
-	described by designOriginatingOrganization (note "Developer of the source CAD file. Links to Organization foreign key.") with values of type Organization,
-	described by designDerivedFromPartDesign (note "Part Design of original part this object is derived from (if applicable).") with a single value of type Design.
+Design (note "Document that specifies the geometry and characteristics of a part for manufacture.") is a type of Document,
+	described by designSoftware (note "Software used to create or modify the design.") with a single value of type Software,
+	described by designRevNumber (note "Identifier that distinguishes a revision of the part design.") with a single value of type string,
+	described by designOriginatingOrganization (note "Organization that developed the design file.") with values of type Organization,
+	described by designDerivedFromPartDesign (note "Part design from which the design is derived.") with a single value of type Design.
 
-ReverseEngineeredModel (note "Point cloud scanned AM part model brought back into the CAD application for feedback and analysis.") is a type of Design.
+ReverseEngineeredModel (note "Design model created from scan data of a part.") is a type of Design.
 
-PrimarySourceModel (note "The original part design not accounting for design for additive manufacturing.") is a type of Design.
+PrimarySourceModel (note "Original part design before adaptation for manufacturing.") is a type of Design.
 
-AugmentedSourceModel (note "The augmented part design accounting for the distortion effects from additive printing.") is a type of Design.
+AugmentedSourceModel (note "Part design modified to account for distortion effects during additive manufacturing.") is a type of Design.
