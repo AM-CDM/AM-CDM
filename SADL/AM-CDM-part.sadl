@@ -7,7 +7,7 @@ Part (note "Discrete manufactured object designed to fulfill a specific function
 	described by partName (note "Human-readable name that designates the part.") with a single value of type string,
 	described by partProcessHistory (note "Record of manufacturing activities associated with the part.") with a single value of type ProcessHistory,
 	described by partDesignSpecification (note "Design specification that prescribes the finished part.") with a single value of type DesignSpecification,
-	described by partProcessSpecificPartDesign (note "Design files that specifies an intermediate state of a part after completion of a manufacturing process step.") with values of type DesignSpecification,
+	described by partProcessSpecificPartDesign (note "Design files that specify an intermediate state of a part after completion of a manufacturing process step.") with values of type DesignSpecification,
 	described by partProject (note "Project associated with the part.") with values of type Project.
 
 DesignSpecification (note "Document that defines requirements for a part.") is a class,
