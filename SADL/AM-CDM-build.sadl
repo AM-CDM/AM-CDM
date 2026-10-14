@@ -36,7 +36,7 @@ BuildPlate (note "Material input which provides a surface upon which the buildin
 	described by buildPlateSurfaceFinish (note "Surface roughness description of a build plate.") with a single value of type string,
 	described by buildPlateManufacturer (note "Build plate manufacturer, links to Organization.") with a single value of type Organization,
 	described by buildPlateCertificationDate (note "Purchase/certification date of a build plate.") with a single value of type dateTime,
-	described by buildPlateCertification (note "Link to the certificate of a build plate.") with a single value of type Document.
+	described by buildPlateCertification (note "Certificate of a build plate.") with a single value of type Document.
 
 AMProcessStepSpecification (note "Specification for an additive manufacturing process.") is a type of ManufacturingStepSpecification,
 	described by amSpecBuildPlan (note "Document that describes the build specific design intent and requirements, may include plate layout, witness coupons, object quantity, position/orientation.") with values of type Document,
@@ -92,7 +92,7 @@ processStepData of AMPartExtraction only has values of type PartExtractionProces
 PartExtractionProcessStepSpecification (note "Specification for part extraction from a build product.") is a type of ManufacturingStepSpecification.
 PartExtractionProcessStepData (note "Data recorded during a part extraction process step.") is a type of ProcessStepData.
 
-AMPartExtractionMaterialOutput (note "Material output from an AM part extraction process, including parts and a build plate.") is a type of MaterialOutputs,
+AMPartExtractionMaterialOutput (note "Material output from an AM part extraction process.") is a type of MaterialOutputs,
 	described by amAMPartExtractionParts (note "Parts extracted from a build product during an AM part extraction process.") with values of type Part,
 	described by amAMPartExtractionBuildPlate (note "Build plate extracted from a build product during an AM part extraction process.")  with a single value of type BuildPlate.
 
