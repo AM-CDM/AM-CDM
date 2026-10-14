@@ -10,7 +10,7 @@ mfgProcessMaterialOutputs of Build only has values of type AMMaterialOutput.
 processStepSpecification of Build only has values of type AMProcessStepSpecification.
 processStepData of Build only has values of type AMProcessStepData.
 
-AMMaterialInput (note "Material that is the input to an AM process and become a part of the material output.") is a type of MaterialInputs,
+AMMaterialInput (note "Material that is an input to an AM process and become a part of the material output.") is a type of MaterialInputs,
 	described by amMatInputFeedstockMaterial (note "Bulk raw material supplied to an AM building process.") with a single value of type MaterialStock,
 	described by amMatInputQuantityOfFeedstockMaterialUsed (note "Mass of feedstock material used in solidified parts.") with a single value of type Quantity,
 	described by amMatInputBuildPlate (note "Build plate as a part of material input to an AM building process.") with a single value of type BuildPlate.
