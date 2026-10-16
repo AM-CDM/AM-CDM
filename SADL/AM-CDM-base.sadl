@@ -56,8 +56,8 @@ PhoneNumber (note "Telephone number together with the country to which its calli
 
 Country (note "Sovereign nation identified by its name and standardised ISO country and calling codes, used to qualify addresses and phone numbers.") is a class,
 	described by countryName (note "Human-readable name that designates the country.") with a single value of type string,
-	described by countryAlpha2Code (note "Two-digit country code for the country.") with a single value of type string,
-	described by countryAlpha3Code (note "Three-digit country code for the country.") with a single value of type string,
+	described by countryAlpha2Code (note "Two-digit country code for the country, from ISO 3166-1 alpha-2.") with a single value of type string,
+	described by countryAlpha3Code (note "Three-digit country code for the country, from ISO 3166-1 alpha-3.") with a single value of type string,
 	described by countryCallingCode (note "Calling code for the country.") with a single value of type string.
 
 Environment (note "Set of ambient physical conditions, such as temperature and pressure, surrounding an object or process.") is a class,
