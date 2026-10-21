@@ -15,8 +15,8 @@ DesignSpecification (note "Specification for a part.") is a class,
 	described by designSpecName (note "Human readable name which designates the design specification.") with a single value of type string,
 	described by designSpecAuthor (note "Author of design specification.") with a single value of type Person,
 	described by designSpecCriticality (note "Criticality designation of part or parts to be developed in the project.") with a single value of type string,
-	described by designSpecRequirements (note "Document describing requirements or goals for components/specimens to be manufactured.") with a single value of type Document,
-	described by designSpecDesign (note "Design files which specify the component.") with values of type Design.
+	described by designSpecRequirements (note "Document describing requirements or goals for the part.") with a single value of type Document,
+	described by designSpecDesign (note "Design files which specify the part.") with values of type Design.
 
 PartSpecificProcessParameters (note "Process parameters specific to the part.") is a class,
 	described by partSpecOrientation (note "Specified orientation for the specific part.") with a single value of type Orientation,
