@@ -27,7 +27,7 @@ Specimen (note "Physical coupon used for a test, inspection, or characterization
 PartSpecimen (note "Specimen extracted from a part.") is a type of Specimen,
 	described by partSpecimenParentPart (note "Part from which the specimen is extracted.") with a single value of type Part,
 	described by partSpecimenCoordinateOnBuild (note "Coordinate locating the bounding-box center of the part, or an accepted reference datum, within the build.") with a single value of type CartesianCoordinate,
-	described by partSpecimenOrientation (note "Orientation of the specimen within its parent part.") with a single value of type Orientation,
+	described by partSpecimenOrientation (note "Orientation of the specimen within it's parent part.") with a single value of type Orientation,
 	// In the future, we have a Design class with PartDesign, SpecimenDesign subclasses. Below should be of type SpecimenDesign rather than Document. Might also be common geometry terminology from standards.
 	described by partSpecimenGeometry (note "Document describing the geometry of the specimen.") with a single value of type Document.
 

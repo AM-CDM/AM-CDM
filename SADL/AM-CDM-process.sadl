@@ -12,8 +12,8 @@ IndexedProcessStep (note "Process step paired with an index that fixes its posit
 
 PlannedProcessStep (note "Process step that is prescribed in advance by a specification.") is a class,
 	described by processName (note "Human-readable name which designates this process step.") with a single value of type string,
-	described by processPersonnel (note "Individuals who are primarily in charge of the execution of this process step.") with values of type Person,
-	described by processOrganization (note "Organization which is primarily in charge of the execution of this the process step.") with a single value of type Organization,
+	described by processPersonnel (note "Individuals who are primarily in charge of the execution of the process step.") with values of type Person,
+	described by processOrganization (note "Organization which is primarily in charge of the execution of the process step.") with a single value of type Organization,
 	described by processAddress (note "Address where the process is performed.") with a single value of type Address,
 	described by processStartTime (note "Time when process step starts.") with a single value of type dateTime,
 	described by processEndTime (note "Time when process step ends.") with a single value of type dateTime,
@@ -26,7 +26,7 @@ IndexedPlannedProcessStep (note "Planned process step paired with an index that 
 	described by processStepSpecification (note "Prescribed specification governing how the process step is performed.") with a single value of type ProcessStepSpecification.
 
 ProcessStepSpecification (note "Prescription of the manner in which a planned process step is to be performed.") is a class,
-	described by specStandard (note "Standards with which the process step is required to comply with.") with values of type Document,
+	described by specStandard (note "Standards with which the process step is required to comply.") with values of type Document,
 	described by specProcedure (note "Procedures which should be followed when the process step is run.") with values of type Document,
 	described by specControlPlan (note "Documents that describe the methods taken to ensure the quality control of the process step to ensure the outputs meet the requirements.") with values of type Document,
 	described by specControlPlanObjective (note "Information content entities that prescribe what the outcome of the process step should be.") with values of type Document,
