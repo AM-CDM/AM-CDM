@@ -33,7 +33,7 @@ BuildPlate (note "Material input which provides a surface upon which the buildin
 	described by buildPlateWidth (note "Width of a build plate.") with a single value of type Quantity,
 	described by buildPlateDepth (note "Depth of a build plate.") with a single value of type Quantity,
 	described by buildPlateProcessingMethods (note "Post processing methods of a build plate, for example, hot rolled and annealed.") with a single value of type string,
-	described by buildPlateSurfaceFinish (note "Surface finishing process of a build plate, e.g. grit blasted or machined.") with a single value of type string,
+	described by buildPlateSurfaceProcessingMethod (note "Surface finishing process of a build plate, e.g. grit blasted or machined.") with a single value of type string,,
 	described by buildPlateManufacturer (note "Build plate manufacturer.") with a single value of type Organization,
 	described by buildPlateCertificationDate (note "Certification date of a build plate.") with a single value of type dateTime,
 	described by buildPlateCertification (note "Certificate of a build plate.") with a single value of type Document.
