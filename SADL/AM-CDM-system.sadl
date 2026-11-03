@@ -15,7 +15,7 @@ System (note "Collection of interconnected components that are organized and int
 
 SystemSpecification (note "Information about the system that is specified by the system manufacturer.") is a class,
 	described by systemSerialNumber (note "Serial number of the system defined by the manufacturer.") with a single value of type string,
-	described by systemModel (note "Model name of a machine defined by the system manufacturer.") with a single value of type string,
+	described by systemModel (note "Model name of a system defined by the system manufacturer.") with a single value of type string,
 	described by systemManufacturer (note "Manufacturer of the system.") with a single value of type Organization,
 	described by systemSpecElectricVoltage (note "Voltage for the system's electrical connection.") with a single value of type Quantity,
 	described by systemSpecPowerIntensity (note "Current intensity required to power the system.") with a single value of type Quantity,
@@ -56,14 +56,14 @@ laserSpecification (note "Specification that is unique to a laser.") is a type o
 	described by laserMinBeamSpotSize (note "Minimum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
 	described by laserFocusCorrectionType (note "Optical component or approach used to maintain the desired laser beam focus during operation.") with a single value of type string.
 
-Recoater (note "System that spreads powder accross a surface.") is a type of System.
+Recoater (note "System that spreads powder across a surface.") is a type of System.
 
 systemSpecification of Recoater only has values of type RecoaterSpecification.
 
 RecoaterSpecification (note "Specification that is unique to a recoater.") is a type of SystemSpecification,
-	described by recoaterMaximumSpeed (note "Maximum speed at which the recoater can transverse at.") with a single value of type Quantity,
-	described by recoaterMaxUsesAllowed (note "Maximum number of builds that a recoater is allowed to participate in.") with a single value of type integer,
-	described by recoatingSurfaceMaterialType (note "Material that the recoating surface is made of.") with a single value of type MaterialType,
+	described by recoaterMaximumSpeed (note "Maximum speed at which the recoater can transverse.") with a single value of type Quantity,
+	described by recoaterMaxUsesAllowed (note "Maximum number of builds in which a recoater is allowed to participate.") with a single value of type integer,
+	described by recoatingSurfaceMaterialType (note "Material of which the recoating surface is made.") with a single value of type MaterialType,
 	described by recoatingSurfaceMaterialSpecification (note "Specifications that are unique to the recoating surface material.") with a single value of type Document.
 
 GalvoScanner (note "System that is used to manipulate the position of something.") is a type of System.
@@ -71,9 +71,9 @@ GalvoScanner (note "System that is used to manipulate the position of something.
 systemSpecification of GalvoScanner only has values of type GalvoScannerSpecification.
 
 GalvoScannerSpecification (note "Specification that is unique to a galvo scanner.")is a type of SystemSpecification,
-	described by galvoScannerMaxScanAngleX (note "Maximum angle in the X direction, relative to the galvo scanner origin, that the galvo scanner is capable of rotating.") with a single value of type Quantity,
-	described by galvoScannerMaxScanAngleY (note "Maximum angle in the Y direction, relative to the galvo scanner origin, that the galvo scanner is capable of rotating.") with a single value of type Quantity,
-	described by galvoScannerRepeatability (note "Maximum angle in the Z direction, relative to the galvo scanner origin, that the galvo scanner is capable of rotating.") with a single value of type Quantity,
+	described by galvoScannerMaxScanAngleX (note "Maximum angle in the X direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
+	described by galvoScannerMaxScanAngleY (note "Maximum angle in the Y direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
+	described by galvoScannerRepeatability (note "Maximum angle in the Z direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
 	described by galvoScannerMaxScanSpeed (note "Maximum taversal speed that the galvo scanner is capable of achieving.") with a single value of type Quantity,
 	described by galvoScannerOrigin (note "Location of the origin of the galvo scanner within the scan area, typically where the galvanometer motors recieve a neutral control signal.") with a single value of type CartesianCoordinate,
 	described by galvoScannerType (note "Information that classifies a galvo scanner according to its scanning configuration and beam-steering capabilities.") with a single value of type string.
@@ -145,7 +145,7 @@ SystemCapability (note "Capabilities or limitations of a system, which may be pr
 AMSystemCapability (note "Capabilities of an additive manufacturing system, which may be provided by the system manufacturer or vendor.") is a class,
 	described by systemCapabilityProcessableRawMaterial (note "Processable raw material list of an additive manufacturing system.") with values of type MaterialType,
 	described by systemCapabilityMaximumBuildRate (note "Maximum build rate (reported in volume or mass per unit of time) that the additive manufacturing system is capable of operating at.") with a single value of type Quantity,
-	described by systemCapabilityMinimumLayerThickness (note "Smallest layer thickness that the additive manufacturing system is capable of producing.") with a single value of type Quantity,
+	described by systemCapabilityMinimumLayerThickness (note "Minimum layer thickness that the additive manufacturing system is capable of producing.") with a single value of type Quantity,
 	described by systemCapabilityMaximumLayerThickness (note "Maximum layer thickness that the additive manufacturing system is capable of producing.") with a single value of type Quantity,
 	described by systemCapabilityMinimumOxygenLevel (note "Minimum level of oxygen that the additive manufacturing system is capable of operating at.") with a single value of type Quantity,
 	described by systemCapabilityMinimumMoistureLevel (note "Minimum level of moisture that the additive manufacturing system is capable of operating at.") with a single value of type Quantity.
@@ -159,14 +159,14 @@ SystemQualificationEventData (note "Data that is generated as a result of a syst
 
 InstallationQualification (note "Qualification process involved in the installation of an additive manufacturing system.") is a type of SystemQualificationEvent.
 
-OperationalQualification (note "Qualificaiton process involved in the operationalization of an additive manufacturing system, often to evaluate and validate the performance of a particular additive manufacturingSystem for a particular material type.") is a type of SystemQualificationEvent.
+OperationalQualification (note "Qualification process involved in the operationalization of an additive manufacturing system, often to evaluate and validate the performance of a particular additive manufacturingSystem for a particular material type.") is a type of SystemQualificationEvent.
 
 PerformanceQualification (note "Qualification process involved in the evaluation of an additive manufacturing system's capability to meet performance requirements for a partiular part.") is a type of SystemQualificationEvent.
 
 MaintenanceEvent is a (note "Maintenance process performed on a system.") type of PlannedProcessStep,
 	described by processEventData (note "Process monitoring data or real-time control information about the process event.") with a single value of type MaintenanceEventData.
 
-MaintenanceEventData (note "Data that is associated with a Maintenance Event.") is a type of ProcessStepData,
+MaintenanceEventData (note "Data that is associated with a maintenance event.") is a type of ProcessStepData,
 	described by maintenanceDataReport (note "Technical report from the maintenance event.") with a single value of type Document.
 
 SystemCalibration (note "Type of maintenance event that involves the process of determining and, when necessary, adjusting the relationship between a system's outputs and known reference values to achieve a specified level of measurement accuracy.") is a type of MaintenanceEvent.
@@ -185,6 +185,6 @@ Software (note "Collection of computer-readable instructions and associated data
 	described by softwareConfigurationSettingsFile (note "File representing the specific software settings used.") with a single value of type Document,
 	described by softwareFileType (note "File type used by the software (for automated processing).") with a single value of type string.
 
-HTSystem (note "System capable of performing a Heat Treatment.") is a type of System.
-HIPSystem (note "System capable of performing Hot Isostatic Pressing.") is a type of System.
+HTSystem (note "System capable of performing a heat treatment.") is a type of System.
+HIPSystem (note "System capable of performing hot isostatic pressing.") is a type of System.
 PartExtractionSystem (note "System capable of part extraction.") is a type of System.
