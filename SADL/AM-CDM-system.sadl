@@ -17,9 +17,6 @@ SystemSpecification (note "Information about the system that is specified by the
 	described by systemSerialNumber (note "Serial number of the system defined by the manufacturer.") with a single value of type string,
 	described by systemModel (note "Model name of a system defined by the system manufacturer.") with a single value of type string,
 	described by systemManufacturer (note "Manufacturer of the system.") with a single value of type Organization,
-	described by systemSpecElectricVoltage (note "Voltage for the system's electrical connection.") with a single value of type Quantity,
-	described by systemSpecPowerIntensity (note "Current intensity required to power the system.") with a single value of type Quantity,
-	described by systemSpecPowerFrequency (note "Power frequency for the electrical connection of the system.") with a single value of type Quantity,
 	described by systemSoftware (note "Computer programs required for operation of the system.") with values of type Software.
 
 AMSystem (note "System that is capable of additive manufacturing.") is a type of System.
@@ -29,9 +26,13 @@ systemCapability of AMSystem only has values of type AMSystemCapability.
  
 AMSystemSpecification (note "Specifications that are unique to the additive manufacturing system.") is a type of SystemSpecification,
 	described by amSystemHazmatRequirements (note "Information specifying hazardous material requirements of the additive manufacturing system.") with a single value of type document.
+	described by amSystemSpecElectricVoltage (note "Voltage for the AM system's electrical connection.") with a single value of type Quantity,
+	described by amSystemSpecPowerIntensity (note "Current intensity required to power the AM system.") with a single value of type Quantity,
+	described by amSystemSpecPowerFrequency (note "Power frequency for the electrical connection of the AM system.") with a single value of type Quantity,
 
 Sensor (note "System that observes an object or a process and collects data about the object or process.") is a type of System,
-	described by sensorSpecification (note "Specification that is unique to a sensor.") with a single value of type SensorSpecification.
+
+systemSpecification of sensor only has values of type SensorSpecification.
 
 SensorSpecification (note "Specification that is unique to a sensor.") is a type of SystemSpecification,
 	described by samplingRateMin (note "Minimum rate at which the sensor can sample data.") with a single value of type Quantity,
@@ -42,10 +43,11 @@ BuildChamber (note "Enclosed location within an additive manufacturing system wh
 	described by buildChamberVolume (note "Total usable volume available in the additive manufacturing system for building parts.") with a single value of type BuildVolume.
 
 Laser (note "System that is capable of producing a laser beam.") is a type of System,
-	described by laserSpecification (note "Specification that is unique to a laser.") with a single value of type laserSpecification,
 	described by laserLaserBeamProfile (note "Measured cross-sectional intensity profile of a laser beam.") with a single value of type Document.
 
-laserSpecification (note "Specification that is unique to a laser.") is a type of SystemSpecification,
+systemSpecification of Laser only has values of type LaserSpecification.
+
+LaserSpecification (note "Specification that is unique to a laser.") is a type of SystemSpecification,
 	described by laserMaxLaserPower (note "Maximum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserMinLaserPower (note "Minimum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserRatedWavelength (note "Wavelength that the laser operates at as specificed by the laser manufacturer.") with a single value of type Quantity,
@@ -72,7 +74,7 @@ GalvoScannerSpecification (note "Specification that is unique to a galvo scanner
 	described by galvoScannerMaxScanAngleY (note "Maximum angle in the Y direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
 	described by galvoScannerRepeatability (note "Maximum angle in the Z direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
 	described by galvoScannerMaxScanSpeed (note "Maximum traversal speed that the galvo scanner is capable of achieving.") with a single value of type Quantity,
-	described by galvoScannerOrigin (note "Location of the origin of the galvo scanner within the scan area, typically where the galvanometer motors recieve a neutral control signal.") with a single value of type CartesianCoordinate,
+	described by galvoScannerOrigin (note "Location of the origin of the galvo scanner within the scan area, typically where the galvanometer motors receive a neutral control signal.") with a single value of type CartesianCoordinate,
 	described by galvoScannerType (note "Information that classifies a galvo scanner according to its scanning configuration and beam-steering capabilities.") with a single value of type string.
 
 Camera (note "System that is capable of capturing or recording visual images of a subject.") is a type of Sensor.
@@ -80,9 +82,9 @@ Camera (note "System that is capable of capturing or recording visual images of 
 systemSpecification of Camera only has values of type CameraSpecification.
 
 CameraSpecification (note "Specification that is unique to a camera.") is a type of SensorSpecification,
-	described by cameraImageWidth (note "Camera image width in pixel.") with a single value of type Quantity,
+	described by cameraImageWidth (note "Camera image width in pixels.") with a single value of type Quantity,
 	described by cameraBitDepth (note "Bit depth of pixel values.") with a single value of type Quantity,
-	described by cameraImageHeight (note "Camera image height in pixel.") with a single value of type Quantity,
+	described by cameraImageHeight (note "Camera image height in pixels.") with a single value of type Quantity,
 	described by cameraCenter (note "Location of the center position of a camera.") with a single value of type CartesianCoordinate,
 	described by cameraOpticalFilterBandwidth (note "Bandwidth of a camera's filter bandwidth.") with a single value of type Quantity,
 	described by cameraDetectorPitchSize (note "Camera detection pitch size.") with a single value of type Quantity,
@@ -111,9 +113,9 @@ Pyrometer (note "Non-contact temperature measurement system that operates by det
 systemSpecification of Pyrometer only has values of type PyrometerSpecification.
 
 PyrometerSpecification (note "Specification that is unique to a pyrometer.") is a type of SensorSpecification,
-	described by pyrometerOpticalFilterBandwidth1 (note "First bandwidth of the pyrometers optical filter.") with a single value of type Quantity,
-	described by pyrometerOpticalFilterBandwidth2 (note "Second bandwidth of the pyrometers optical filter.") with a single value of type Quantity,
-	described by pyrometerBitDepth (note "Measurement characteristic that specifies the number of bits used to represent a measured temperature value") with a single value of type Quantity.
+	described by pyrometerOpticalFilterBandwidth1 (note "First bandwidth of the pyrometer's optical filter.") with a single value of type Quantity,
+	described by pyrometerOpticalFilterBandwidth2 (note "Second bandwidth of the pyrometer's optical filter.") with a single value of type Quantity,
+	described by pyrometerBitDepth (note "Measurement characteristic that specifies the number of bits used to represent a measured temperature value.") with a single value of type Quantity.
 
 LaserPowderBedFusionSystem (note "Additive Manufacturing system capable of building parts through the laser powder bed fusion process.") is a type of AMSystem.
 
@@ -131,7 +133,7 @@ BuildEnvironmentalControl (note "Environment control of the build chamber on its
 
 BuildVolume (note "Total usable volume available as part of the additive manufacturing system.") is a class,
 	described by buildVolumeShape (note "Shape of the build volume.") with a single value of type string,
-	described by buildVolumeDimension (note "Width, Depth, Height of a build volume.") with a single value of type CartesianCoordinate,
+	described by buildVolumeDimension (note "Width, depth, height of a build volume.") with a single value of type CartesianCoordinate,
 	described by buildVolumeDiameter (note "Diameter of a building volume if of cylinder type.") with a single value of type Quantity,
 	described by buildVolumeMachineOrigin (note "Origin X, Y, and Z position as defined by machine manufacturer relative to build volume center.") with a single value of type CartesianCoordinate,
 	described by buildVolumeTotalBuildVolume (note "Total usable volume available in the additive manufacturing system.") with a single value of type Quantity,
