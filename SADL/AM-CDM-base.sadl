@@ -30,7 +30,7 @@ Person (note "Individual human being.") is a class,
 	described by personEmail (note "Electronic-mail address at which the person can be reached.") with a single value of type string,
 	described by personPhoneNumber (note "Telephone number at which the person can be reached.") with values of type PhoneNumber,
 	described by personQualification (note "Qualification or certification held by the person.") with values of type PersonQualification,
-	described by personOrganization (note "Organization to which the person belongs (you may wish to reference by ID to avoid possible circular references).") with a single value of type Organization.
+	described by personOrganization (note "Organization to which the person belongs.") with a single value of type Organization.
 
 OrganizationQualification (note "Qualification or certification held by the organization.") is a type of Qualification.
 
