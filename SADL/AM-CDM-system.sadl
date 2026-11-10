@@ -24,7 +24,7 @@ AMSystem (note "System that is capable of additive manufacturing.") is a type of
 systemSpecification of AMSystem only has values of type AMSystemSpecification.
 systemCapability of AMSystem only has values of type AMSystemCapability.
  
-AMSystemSpecification (note "Specifications that are unique to the additive manufacturing system.") is a type of SystemSpecification,
+AMSystemSpecification (note "Information about the AM system that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by amSystemHazmatRequirements (note "Information specifying hazardous material requirements of the additive manufacturing system.") with a single value of type document.
 	described by amSystemSpecElectricVoltage (note "Voltage for the AM system's electrical connection.") with a single value of type Quantity,
 	described by amSystemSpecPowerIntensity (note "Current intensity required to power the AM system.") with a single value of type Quantity,
@@ -34,7 +34,7 @@ Sensor (note "System that observes an object or a process and collects data abou
 
 systemSpecification of sensor only has values of type SensorSpecification.
 
-SensorSpecification (note "Specification that is unique to a sensor.") is a type of SystemSpecification,
+SensorSpecification (note "Information about the sensor that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by samplingRateMin (note "Minimum rate at which the sensor can sample data.") with a single value of type Quantity,
 	described by samplingRateMax (note "Maximum rate at which the sensor can sample data.") with a single value of type Quantity.
 
@@ -47,7 +47,7 @@ Laser (note "System that is capable of producing a laser beam.") is a type of Sy
 
 systemSpecification of Laser only has values of type LaserSpecification.
 
-LaserSpecification (note "Specification that is unique to a laser.") is a type of SystemSpecification,
+LaserSpecification (note "Information about the laser that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by laserMaxLaserPower (note "Maximum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserMinLaserPower (note "Minimum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserRatedWavelength (note "Wavelength that the laser operates at as specificed by the laser manufacturer.") with a single value of type Quantity,
@@ -60,7 +60,7 @@ Recoater (note "System that spreads powder across a surface.") is a type of Syst
 
 systemSpecification of Recoater only has values of type RecoaterSpecification.
 
-RecoaterSpecification (note "Specification that is unique to a recoater.") is a type of SystemSpecification,
+RecoaterSpecification (note "Information about the recoater that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by recoaterMaximumSpeed (note "Maximum lateral speed at which the recoater can move across the build platform.") with a single value of type Quantity,
 	described by recoaterMaxUsesAllowed (note "Maximum number of builds in which a recoater is allowed to participate.") with a single value of type integer,
 	described by recoatingSurfaceMaterialType (note "Material of which the recoating surface is comprised.") with a single value of type MaterialType,
@@ -69,7 +69,7 @@ GalvoScanner (note "System that is used to manipulate the position of something.
 
 systemSpecification of GalvoScanner only has values of type GalvoScannerSpecification.
 
-GalvoScannerSpecification (note "Specification that is unique to a galvo scanner.")is a type of SystemSpecification,
+GalvoScannerSpecification (note "Information about the galvo scanner that is specified by the manufacturer.")is a type of SystemSpecification,
 	described by galvoScannerMaxScanAngleX (note "Maximum angle in the X direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
 	described by galvoScannerMaxScanAngleY (note "Maximum angle in the Y direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
 	described by galvoScannerRepeatability (note "Maximum angle in the Z direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
@@ -81,7 +81,7 @@ Camera (note "System that is capable of capturing or recording visual images of 
 
 systemSpecification of Camera only has values of type CameraSpecification.
 
-CameraSpecification (note "Specification that is unique to a camera.") is a type of SensorSpecification,
+CameraSpecification (note "Information about the camera that is specified by the manufacturer.") is a type of SensorSpecification,
 	described by cameraImageWidth (note "Camera image width in pixels.") with a single value of type Quantity,
 	described by cameraBitDepth (note "Bit depth of pixel values.") with a single value of type Quantity,
 	described by cameraImageHeight (note "Camera image height in pixels.") with a single value of type Quantity,
@@ -91,11 +91,11 @@ CameraSpecification (note "Specification that is unique to a camera.") is a type
 	described by cameraDigitalMagnification (note "Magnification factor setting of a camera.") with a single value of type Quantity,
 	described by cameraMinShutterSpeed (note "Shortest exposure duration that a camera is capable of using to acquire an image.") with a single value of type Quantity.
 
-Lens (note "Assembly of shaped glass or plastic elements designed to collect, bend, and focus incoming light rays onto a single plane.") is a type of Sensor.
+Lens (note "Assembly of shaped glass or plastic elements designed to collect, bend, and focus incoming light rays onto a single plane.") is a type of System.
 
 systemSpecification of Lens only has values of type LensSpecification.
 
-LensSpecification (note "Specification that is unique to a lens.") is a type of SensorSpecification,
+LensSpecification (note "Information about the lens that is specified by the manufacturer.") is a type of SensorSpecification,
 	described by lensMaxAperture (note "Lens characteristic that specifies the largest aperture through which light can pass during image formation.") with a single value of type Quantity,
 	described by lensFilter (note "Type of filter used in conjunction with a lens to modify the light that passes through it.") with a single value of type string.
 	described by lensOpticalMagnification (note "Ratio of the size of an image formed by a camera lens to the size of the corresponding object.") with a single value of type float,
@@ -104,7 +104,7 @@ Photodiode (note "Semiconductor light sensor that converts light energy (photons
 
 systemSpecification of Photodiode only has values of type PhotodiodeSpecification.
 
-PhotodiodeSpecification (note "Specification that is unique to a photodiode.") is a type of SensorSpecification,
+PhotodiodeSpecification (note "Information about the photodiode that is specified by the manufacturer.") is a type of SensorSpecification,
 	described by photodiodeOpticalFilterBandwidth (note "Optical filter characteristic that specifies the range of wavelengths transmitted to a photodiode.") with a single value of type Quantity,
 	described by photodiodeBitDepth (note "Measurement characteristic that specifies the number of bits used to represent a measured signal value.") with a single value of type Quantity.
 
@@ -112,7 +112,7 @@ Pyrometer (note "Non-contact temperature measurement system that operates by det
 
 systemSpecification of Pyrometer only has values of type PyrometerSpecification.
 
-PyrometerSpecification (note "Specification that is unique to a pyrometer.") is a type of SensorSpecification,
+PyrometerSpecification (note "Information about the pyrometer that is specified by the manufacturer.") is a type of SensorSpecification,
 	described by pyrometerOpticalFilterBandwidth1 (note "First bandwidth of the pyrometer's optical filter.") with a single value of type Quantity,
 	described by pyrometerOpticalFilterBandwidth2 (note "Second bandwidth of the pyrometer's optical filter.") with a single value of type Quantity,
 	described by pyrometerBitDepth (note "Measurement characteristic that specifies the number of bits used to represent a measured temperature value.") with a single value of type Quantity.
@@ -141,7 +141,7 @@ BuildVolume (note "Total usable volume available as part of the additive manufac
 
 SystemCapability (note "Capabilities or limitations of a system, which may be provided by the system manufacturer or vendor.") is a class
 
-AMSystemCapability (note "Capabilities of an additive manufacturing system, which may be provided by the system manufacturer or vendor.") is a class,
+AMSystemCapability (note "Capabilities of an additive manufacturing system, which may be provided by the system manufacturer or vendor.") is a type of SystemCapability,
 	described by systemCapabilityProcessableRawMaterial (note "Processable raw material list of an additive manufacturing system.") with values of type MaterialType,
 	described by systemCapabilityMaximumBuildRate (note "Maximum build rate (reported in volume or mass per unit of time) that the additive manufacturing system is capable of operating at.") with a single value of type Quantity,
 	described by systemCapabilityMinimumLayerThickness (note "Minimum layer thickness that the additive manufacturing system is capable of producing.") with a single value of type Quantity,
@@ -149,7 +149,7 @@ AMSystemCapability (note "Capabilities of an additive manufacturing system, whic
 	described by systemCapabilityMinimumOxygenLevel (note "Minimum level of oxygen that the additive manufacturing system is capable of operating at.") with a single value of type Quantity,
 	described by systemCapabilityMinimumMoistureLevel (note "Minimum level of moisture that the additive manufacturing system is capable of operating at.") with a single value of type Quantity.
 
-SystemQualificationEvent (note "Event that a system undergoes to evaluate whether or not it can be qualified to some standard.") is a type of ProcessStep,
+SystemQualificationEvent (note "Event that a system undergoes to evaluate whether or not it can be qualified to some standard.") is a type of PlannedProcessStep,
 	described by processEventData (note "Data associated with a process event that record observations, measurements, states, or outcomes pertaining to that event.") with a single value of type SystemQualificationEventData.
 
 SystemQualificationEventData (note "Data that is generated as a result of a system qualification event.") is a type of ProcessStepData,
