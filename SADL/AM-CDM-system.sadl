@@ -43,7 +43,6 @@ BuildChamber (note "Enclosed location within an additive manufacturing system wh
 	described by buildChamberVolume (note "Total usable volume available in the additive manufacturing system for building parts.") with a single value of type BuildVolume.
 
 Laser (note "System that is capable of producing a laser beam.") is a type of System,
-	described by laserLaserBeamProfile (note "Measured cross-sectional intensity profile of a laser beam.") with a single value of type Document.
 
 systemSpecification of Laser only has values of type LaserSpecification.
 
@@ -55,6 +54,7 @@ LaserSpecification (note "Information about the laser that is specified by the m
 	described by laserMaxBeamSpotSize (note "Maximum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
 	described by laserMinBeamSpotSize (note "Minimum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
 	described by laserFocusCorrectionType (note "Optical component or approach used to maintain the desired laser beam focus during operation.") with a single value of type string.
+	described by laserLaserBeamProfile (note "Cross-sectional intensity profile of a laser beam.") with a single value of type Document.
 
 Recoater (note "System that spreads powder across a surface.") is a type of System.
 
