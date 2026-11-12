@@ -10,7 +10,7 @@ System (note "Collection of interconnected components that are organized and int
 	described by systemLocation (note "Location where the system is installed.") with a single value of type Address,
 	described by systemSpecification (note "Information about the system that is specified by the system manufacturer.") with a single value of type SystemSpecification,
 	described by systemProcessHistory (note "Ordered series of processes that have occurred to the system.") with a single value of type ProcessHistory,
-	described by systemComponents (note "Other systems that have been assembled and integrated to constitiute the system.") with values of type System,
+	described by systemComponents (note "Other systems that have been assembled and integrated to constitute the system.") with values of type System,
 	described by systemCapability (note "Capabilities of the system.") with a single value of type systemCapability.
 
 SystemSpecification (note "Information about the system that is specified by the system manufacturer.") is a class,
@@ -49,10 +49,10 @@ systemSpecification of Laser only has values of type LaserSpecification.
 LaserSpecification (note "Information about the laser that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by laserMaxLaserPower (note "Maximum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserMinLaserPower (note "Minimum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
-	described by laserRatedWavelength (note "Wavelength that the laser operates at as specificed by the laser manufacturer.") with a single value of type Quantity,
+	described by laserRatedWavelength (note "Wavelength that the laser operates at, as specificed by the laser manufacturer.") with a single value of type Quantity,
 	described by laserBeamShape (note "Shape of the laser beam that was designed by the laser manufacturer. This does not account for any additional optics that may modify the laser beam shape.") with a single value of type string,
-	described by laserMaxBeamSpotSize (note "Maximum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
-	described by laserMinBeamSpotSize (note "Minimum cross-sectional size of the laser beam as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
+	described by laserMaxBeamSpotSize (note "Maximum cross-sectional size of the laser beam, as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
+	described by laserMinBeamSpotSize (note "Minimum cross-sectional size of the laser beam, as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
 	described by laserFocusCorrectionType (note "Optical component or approach used to maintain the desired laser beam focus during operation.") with a single value of type string.
 	described by laserLaserBeamProfile (note "Cross-sectional intensity profile of a laser beam.") with a single value of type Document.
 
@@ -72,7 +72,7 @@ systemSpecification of GalvoScanner only has values of type GalvoScannerSpecific
 GalvoScannerSpecification (note "Information about the galvo scanner that is specified by the manufacturer.")is a type of SystemSpecification,
 	described by galvoScannerMaxScanAngleX (note "Maximum angle in the X direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
 	described by galvoScannerMaxScanAngleY (note "Maximum angle in the Y direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
-	described by galvoScannerRepeatability (note "Maximum angle in the Z direction, relative to the galvo scanner origin, to which the galvo scanner is capable of rotating.") with a single value of type Quantity,
+	described by galvoScannerRepeatability (note "The positional variation observed when a galvo scanner is repeatedly commanded to the same target position.") with a single value of type Quantity,
 	described by galvoScannerMaxScanSpeed (note "Maximum traversal speed that the galvo scanner is capable of achieving.") with a single value of type Quantity,
 	described by galvoScannerOrigin (note "Location of the origin of the galvo scanner within the scan area, typically where the galvanometer motors receive a neutral control signal.") with a single value of type CartesianCoordinate,
 	described by galvoScannerType (note "Information that classifies a galvo scanner according to its scanning configuration and beam-steering capabilities.") with a single value of type string.
@@ -127,7 +127,7 @@ BinderJetSystem (note "Additive Manufacturing system capable of building parts t
 
 BuildEnvironmentalControl (note "Environment control of the build chamber on its temperature, pressure, humidity and oxygen level, for optimal quality of AM material transformation.") is a class,
 	described by buildEnvironmentControlShieldingGasType (note "Type of shielding gas used in the build environmental control system.") with a single value of type string,
-	described by buildEnvironmentControlMaximumPreheatingTemperature (note "Maximum temperature that the build environmental control is capable of preheating to.") with a single value of type Quantity,
+	described by buildEnvironmentControlMaximumPreheatingTemperature (note "Maximum temperature to which the build environmental control is capable of preheating.") with a single value of type Quantity,
 	described by buildEnvironmentControlGasFlowNozzleType (note "Type of gas flow nozzle utilized by the build environmental control.") with a single value of type string,
 	described by buildEnvironmentControlShieldingDeviceType (note "Type of shielding device used by the build environmental control.") with a single value of type string.
 
@@ -143,11 +143,11 @@ SystemCapability (note "Capabilities or limitations of a system, which may be pr
 
 AMSystemCapability (note "Capabilities of an additive manufacturing system, which may be provided by the system manufacturer or vendor.") is a type of SystemCapability,
 	described by systemCapabilityProcessableRawMaterial (note "Processable raw material list of an additive manufacturing system.") with values of type MaterialType,
-	described by systemCapabilityMaximumBuildRate (note "Maximum build rate (reported in volume or mass per unit of time) that the additive manufacturing system is capable of operating at.") with a single value of type Quantity,
+	described by systemCapabilityMaximumBuildRate (note "Maximum build rate (reported in volume or mass per unit of time) at which the additive manufacturing system is capable of operating.") with a single value of type Quantity,
 	described by systemCapabilityMinimumLayerThickness (note "Minimum layer thickness that the additive manufacturing system is capable of producing.") with a single value of type Quantity,
 	described by systemCapabilityMaximumLayerThickness (note "Maximum layer thickness that the additive manufacturing system is capable of producing.") with a single value of type Quantity,
-	described by systemCapabilityMinimumOxygenLevel (note "Minimum level of oxygen that the additive manufacturing system is capable of operating at.") with a single value of type Quantity,
-	described by systemCapabilityMinimumMoistureLevel (note "Minimum level of moisture that the additive manufacturing system is capable of operating at.") with a single value of type Quantity.
+	described by systemCapabilityMinimumOxygenLevel (note "Minimum level of oxygen at which the additive manufacturing system is capable of operating.") with a single value of type Quantity,
+	described by systemCapabilityMinimumMoistureLevel (note "Minimum level of moisture at which the additive manufacturing system is capable of operating.") with a single value of type Quantity.
 
 SystemQualificationEvent (note "Event that a system undergoes to evaluate whether or not it can be qualified to some standard.") is a type of PlannedProcessStep,
 	described by processEventData (note "Data associated with a process event that record observations, measurements, states, or outcomes pertaining to that event.") with a single value of type SystemQualificationEventData.
