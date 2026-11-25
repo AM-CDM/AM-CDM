@@ -2,7 +2,7 @@ uri "http://kdl.ge.com/AM-CDM-testInspectionCharacterization" alias AM-CDM-testI
 
 import "http://kdl.ge.com/AM-CDM-build".
 
-TestInspectionCharacterization (note "Test, inspection, or characterization performed on a part or material specimen, excluding in-process monitoring.") is a type of PlannedProcessStep,
+TestInspectionCharacterization (note "Test, inspection, or characterization performed on a part or material specimen, excluding in-process monitoring.") is a type of ProcessStep,
 	described by ticResult (note "Result produced by the test, inspection, or characterization.") with a single value of type TestResult,
 	described by ticSpecimen (note "Specimen on which the test, inspection, or characterization is performed. Note: This is a convenience relationship and is redundant to the relationship established through a process history.") with a single value of type Specimen.
 

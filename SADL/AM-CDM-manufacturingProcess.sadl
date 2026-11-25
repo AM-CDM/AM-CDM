@@ -3,7 +3,7 @@ uri "http://kdl.ge.com/AM-CDM-manufacturingProcess" alias AM-CDM-manufacturingPr
 import "http://kdl.ge.com/AM-CDM-system".
 import "http://kdl.ge.com/AM-CDM-part".
 
-ManufacturingProcessStep (note "Planned process in which input material is transformed or modified.") is a type of PlannedProcessStep,
+ManufacturingProcessStep (note "Planned process in which input material is transformed or modified.") is a type of ProcessStep,
 	described by processSpecification (note "Specification that governs how the manufacturing process step is performed.") with a single value of type ManufacturingStepSpecification,
 	described by mfgProcessSystem (note "System used to transform the input material.") with a single value of type System,
 	described by mfgProcessControlSoftware (note "Software applications used to control the manufacturing process step.") with values of type Software,
