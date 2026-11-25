@@ -4,7 +4,7 @@ import "http://kdl.ge.com/AM-CDM-manufacturingProcess".
 
 Build (note "Single additive-manufacturing action in which one or more objects are built up in layers within the process chamber during one process cycle.") is a type of ManufacturingProcessStep.
 
-mfgProcessMachine of Build only has values of type AMSystem.
+mfgProcessSystem of Build only has values of type AMSystem.
 mfgProcessMaterialInputs of Build only has values of type AMMaterialInput.
 mfgProcessMaterialOutputs of Build only has values of type AMMaterialOutput.
 processStepSpecification of Build only has values of type AMProcessStepSpecification.
@@ -33,7 +33,7 @@ BuildPlate (note "Material input which provides a surface upon which the buildin
 	described by buildPlateWidth (note "Width of a build plate.") with a single value of type Quantity,
 	described by buildPlateDepth (note "Depth of a build plate.") with a single value of type Quantity,
 	described by buildPlateProcessingMethods (note "Post processing methods of a build plate, for example, hot rolled and annealed.") with a single value of type string,
-	described by buildPlateSurfaceProcessingMethod (note "Surface finishing process of a build plate, e.g. grit blasted or machined.") with a single value of type string,,
+	described by buildPlateSurfaceProcessingMethod (note "Surface finishing process of a build plate, e.g. grit blasted or machined.") with a single value of type string,
 	described by buildPlateManufacturer (note "Build plate manufacturer.") with a single value of type Organization,
 	described by buildPlateCertificationDate (note "Certification date of a build plate.") with a single value of type dateTime,
 	described by buildPlateCertification (note "Certificate of a build plate.") with a single value of type Document.
@@ -83,7 +83,7 @@ BuildProductInput (note "Material input to a process in the form of a build prod
 
 AMPartExtraction (note "Separating or extracting an AM part or component from a build product.") is a type of ManufacturingProcessStep.
 
-mfgProcessMachine of AMPartExtraction only has values of type PartExtractionSystem.
+mfgProcessSystem of AMPartExtraction only has values of type PartExtractionSystem.
 mfgProcessMaterialInputs of AMPartExtraction only has values of type BuildProductInput.
 mfgProcessMaterialOutputs of AMPartExtraction only has values of type AMPartExtractionMaterialOutput.
 processStepSpecification of AMPartExtraction only has values of type PartExtractionProcessStepSpecification.
