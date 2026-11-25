@@ -11,7 +11,7 @@ System (note "Collection of interconnected components that are organized and int
 	described by systemSpecification (note "Information about the system that is specified by the system manufacturer.") with a single value of type SystemSpecification,
 	described by systemProcessHistory (note "Ordered series of processes that have occurred to the system.") with a single value of type ProcessHistory,
 	described by systemComponents (note "Other systems that have been assembled and integrated to constitute the system.") with values of type System,
-	described by systemCapability (note "Capabilities of the system.") with a single value of type systemCapability.
+	described by systemCapability (note "Capabilities of the system.") with a single value of type SystemCapability.
 
 SystemSpecification (note "Information about the system that is specified by the system manufacturer.") is a class,
 	described by systemSerialNumber (note "Serial number of the system defined by the manufacturer.") with a single value of type string,
@@ -23,16 +23,16 @@ AMSystem (note "System that is capable of additive manufacturing.") is a type of
 
 systemSpecification of AMSystem only has values of type AMSystemSpecification.
 systemCapability of AMSystem only has values of type AMSystemCapability.
- 
+
 AMSystemSpecification (note "Information about the AM system that is specified by the manufacturer.") is a type of SystemSpecification,
-	described by amSystemHazmatRequirements (note "Information specifying hazardous material requirements of the additive manufacturing system.") with a single value of type document.
+	described by amSystemHazmatRequirements (note "Information specifying hazardous material requirements of the additive manufacturing system.") with a single value of type Document,
 	described by amSystemSpecElectricVoltage (note "Voltage for the AM system's electrical connection.") with a single value of type Quantity,
 	described by amSystemSpecPowerIntensity (note "Current intensity required to power the AM system.") with a single value of type Quantity,
-	described by amSystemSpecPowerFrequency (note "Power frequency for the electrical connection of the AM system.") with a single value of type Quantity,
+	described by amSystemSpecPowerFrequency (note "Power frequency for the electrical connection of the AM system.") with a single value of type Quantity.
 
-Sensor (note "System that observes an object or a process and collects data about the object or process.") is a type of System,
+Sensor (note "System that observes an object or a process and collects data about the object or process.") is a type of System.
 
-systemSpecification of sensor only has values of type SensorSpecification.
+systemSpecification of Sensor only has values of type SensorSpecification.
 
 SensorSpecification (note "Information about the sensor that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by samplingRateMin (note "Minimum rate at which the sensor can sample data.") with a single value of type Quantity,
@@ -42,18 +42,18 @@ BuildChamber (note "Enclosed location within an additive manufacturing system wh
 	described by buildChamberEnvironmentalControl (note "Build chamber characteristic that specifies the capability to monitor or regulate environmental conditions within the build chamber.") with a single value of type BuildEnvironmentalControl,
 	described by buildChamberVolume (note "Total usable volume available in the additive manufacturing system for building parts.") with a single value of type BuildVolume.
 
-Laser (note "System that is capable of producing a laser beam.") is a type of System,
+Laser (note "System that is capable of producing a laser beam.") is a type of System.
 
 systemSpecification of Laser only has values of type LaserSpecification.
 
 LaserSpecification (note "Information about the laser that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by laserMaxLaserPower (note "Maximum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserMinLaserPower (note "Minimum power output that the laser is able to emit, as specified by the laser manufacturer.") with a single value of type Quantity,
-	described by laserRatedWavelength (note "Wavelength that the laser operates at, as specificed by the laser manufacturer.") with a single value of type Quantity,
+	described by laserRatedWavelength (note "Wavelength that the laser operates at, as specified by the laser manufacturer.") with a single value of type Quantity,
 	described by laserBeamShape (note "Shape of the laser beam that was designed by the laser manufacturer. This does not account for any additional optics that may modify the laser beam shape.") with a single value of type string,
-	described by laserMaxBeamSpotSize (note "Maximum cross-sectional size of the laser beam, as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
-	described by laserMinBeamSpotSize (note "Minimum cross-sectional size of the laser beam, as specificed by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
-	described by laserFocusCorrectionType (note "Optical component or approach used to maintain the desired laser beam focus during operation.") with a single value of type string.
+	described by laserMaxBeamSpotSize (note "Maximum cross-sectional size of the laser beam, as specified by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
+	described by laserMinBeamSpotSize (note "Minimum cross-sectional size of the laser beam, as specified by the laser manufacturer. This does not account for any additional optics that may modify the spot size.") with a single value of type Quantity,
+	described by laserFocusCorrectionType (note "Optical component or approach used to maintain the desired laser beam focus during operation.") with a single value of type string,
 	described by laserLaserBeamProfile (note "Cross-sectional intensity profile of a laser beam.") with a single value of type Document.
 
 Recoater (note "System that spreads powder across a surface.") is a type of System.
@@ -63,7 +63,7 @@ systemSpecification of Recoater only has values of type RecoaterSpecification.
 RecoaterSpecification (note "Information about the recoater that is specified by the manufacturer.") is a type of SystemSpecification,
 	described by recoaterMaximumSpeed (note "Maximum lateral speed at which the recoater can move across the build platform.") with a single value of type Quantity,
 	described by recoaterMaxUsesAllowed (note "Maximum number of builds in which a recoater is allowed to participate.") with a single value of type integer,
-	described by recoatingSurfaceMaterialType (note "Material of which the recoating surface is comprised.") with a single value of type MaterialType,
+	described by recoatingSurfaceMaterialType (note "Material of which the recoating surface is comprised.") with a single value of type MaterialType.
 
 GalvoScanner (note "System that is used to manipulate the position of something.") is a type of System.
 
@@ -97,8 +97,8 @@ systemSpecification of Lens only has values of type LensSpecification.
 
 LensSpecification (note "Information about the lens that is specified by the manufacturer.") is a type of SensorSpecification,
 	described by lensMaxAperture (note "Lens characteristic that specifies the largest aperture through which light can pass during image formation.") with a single value of type Quantity,
-	described by lensFilter (note "Type of filter used in conjunction with a lens to modify the light that passes through it.") with a single value of type string.
-	described by lensOpticalMagnification (note "Ratio of the size of an image formed by a camera lens to the size of the corresponding object.") with a single value of type float,
+	described by lensFilter (note "Type of filter used in conjunction with a lens to modify the light that passes through it.") with a single value of type string,
+	described by lensOpticalMagnification (note "Ratio of the size of an image formed by a camera lens to the size of the corresponding object.") with a single value of type float.
 
 Photodiode (note "Semiconductor light sensor that converts light energy (photons) directly into an electrical current or voltage.") is a type of Sensor.
 
@@ -139,7 +139,7 @@ BuildVolume (note "Total usable volume available as part of the additive manufac
 	described by buildVolumeTotalBuildVolume (note "Total usable volume available in the additive manufacturing system.") with a single value of type Quantity,
 	described by buildVolumeMachineLastCleanoutDate (note "Date when the build volume was last cleaned.") with a single value of type dateTime.
 
-SystemCapability (note "Capabilities or limitations of a system, which may be provided by the system manufacturer or vendor.") is a class
+SystemCapability (note "Capabilities or limitations of a system, which may be provided by the system manufacturer or vendor.") is a class.
 
 AMSystemCapability (note "Capabilities of an additive manufacturing system, which may be provided by the system manufacturer or vendor.") is a type of SystemCapability,
 	described by systemCapabilityProcessableRawMaterial (note "Processable raw material list of an additive manufacturing system.") with values of type MaterialType,
@@ -149,7 +149,7 @@ AMSystemCapability (note "Capabilities of an additive manufacturing system, whic
 	described by systemCapabilityMinimumOxygenLevel (note "Minimum level of oxygen at which the additive manufacturing system is capable of operating.") with a single value of type Quantity,
 	described by systemCapabilityMinimumMoistureLevel (note "Minimum level of moisture at which the additive manufacturing system is capable of operating.") with a single value of type Quantity.
 
-SystemQualificationEvent (note "Event that a system undergoes to evaluate whether or not it can be qualified to some standard.") is a type of PlannedProcessStep,
+SystemQualificationEvent (note "Event that a system undergoes to evaluate whether or not it can be qualified to some standard.") is a type of ProcessStep,
 	described by processEventData (note "Data associated with a process event that record observations, measurements, states, or outcomes pertaining to that event.") with a single value of type SystemQualificationEventData.
 
 SystemQualificationEventData (note "Data that is generated as a result of a system qualification event.") is a type of ProcessStepData,
@@ -162,7 +162,7 @@ OperationalQualification (note "Qualification process involved in the operationa
 
 PerformanceQualification (note "Qualification process involved in the evaluation of an additive manufacturing system's capability to meet performance requirements for a partiular part.") is a type of SystemQualificationEvent.
 
-MaintenanceEvent is a (note "Maintenance process performed on a system.") type of PlannedProcessStep,
+MaintenanceEvent (note "Maintenance process performed on a system.") is a type of ProcessStep,
 	described by processEventData (note "Process monitoring data or real-time control information about the process event.") with a single value of type MaintenanceEventData.
 
 MaintenanceEventData (note "Data that is associated with a maintenance event.") is a type of ProcessStepData,

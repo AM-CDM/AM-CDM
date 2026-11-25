@@ -3,9 +3,9 @@ uri "http://kdl.ge.com/AM-CDM-manufacturingProcess" alias AM-CDM-manufacturingPr
 import "http://kdl.ge.com/AM-CDM-system".
 import "http://kdl.ge.com/AM-CDM-part".
 
-ManufacturingProcessStep (note "Planned process in which input material is transformed or modified.") is a type of PlannedProcessStep,
+ManufacturingProcessStep (note "Planned process in which input material is transformed or modified.") is a type of ProcessStep,
 	described by processSpecification (note "Specification that governs how the manufacturing process step is performed.") with a single value of type ManufacturingStepSpecification,
-	described by mfgProcessMachine (note "System used to transform the input material.") with a single value of type System,
+	described by mfgProcessSystem (note "System used to transform the input material.") with a single value of type System,
 	described by mfgProcessControlSoftware (note "Software applications used to control the manufacturing process step.") with values of type Software,
 	described by mfgProcessConsumables (note "Consumables used during the manufacturing process step.") with values of type Consumables,
 	described by mfgProcessMaterialInputs (note "Materials provided as inputs to the manufacturing process step.") with values of type MaterialInputs,
@@ -54,8 +54,8 @@ MaterialStockOutput (note "Material stock produced as output by a manufacturing 
 MaterialHT (note "Manufacturing process step in which material stock undergoes thermal heat treatment.") is a type of ManufacturingProcessStep.
 
 processSpecification of MaterialHT only has values of type HTProcessStepSpecification.
-processData of MaterialHT only has values of type HTProcessStepData.
-mfgProcessMachine of MaterialHT only has values of type HTSystem.
+processStepData of MaterialHT only has values of type HTProcessStepData.
+mfgProcessSystem of MaterialHT only has values of type HTSystem.
 mfgProcessMaterialInputs of MaterialHT only has values of type MaterialStockInput.
 mfgProcessMaterialOutputs of MaterialHT only has values of type MaterialStockOutput.
  
@@ -68,24 +68,24 @@ PartMaterialOutput (note "Part produced as output by a manufacturing process ste
 PartHT (note "Manufacturing process step in which a part undergoes thermal heat treatment.") is a type of ManufacturingProcessStep.
 
 processSpecification of PartHT only has values of type HTProcessStepSpecification.
-processData of PartHT only has values of type HTProcessStepData.
-mfgProcessMachine of PartHT only has values of type HTSystem.
+processStepData of PartHT only has values of type HTProcessStepData.
+mfgProcessSystem of PartHT only has values of type HTSystem.
 mfgProcessMaterialInputs of PartHT only has values of type PartMaterialInput.
 mfgProcessMaterialOutputs of PartHT only has values of type PartMaterialOutput.
 
 MaterialHIP (note "Manufacturing process step in which material stock undergoes hot isostatic pressing.") is a type of ManufacturingProcessStep.
 
 processSpecification of MaterialHIP only has values of type HIPProcessStepSpecification.
-processData of MaterialHIP only has values of type HIPProcessStepData.
-mfgProcessMachine of MaterialHIP only has values of type HIPSystem.
+processStepData of MaterialHIP only has values of type HIPProcessStepData.
+mfgProcessSystem of MaterialHIP only has values of type HIPSystem.
 mfgProcessMaterialInputs of MaterialHIP only has values of type MaterialStockInput.
 mfgProcessMaterialOutputs of MaterialHIP only has values of type MaterialStockOutput.
 
 PartHIP (note "Manufacturing process step in which a part undergoes hot isostatic pressing.") is a type of ManufacturingProcessStep.
 
 processSpecification of PartHIP only has values of type HTProcessStepSpecification.
-processData of PartHIP only has values of type HTProcessStepData.
-mfgProcessMachine of PartHIP only has values of type HIPSystem.
+processStepData of PartHIP only has values of type HTProcessStepData.
+mfgProcessSystem of PartHIP only has values of type HIPSystem.
 mfgProcessMaterialInputs of PartHIP only has values of type PartMaterialInput.
 mfgProcessMaterialOutputs of PartHIP only has values of type PartMaterialOutput.
 
